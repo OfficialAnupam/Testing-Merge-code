@@ -1,0 +1,134 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <!-- <div class="logos-container pd-25 pd-top-10 v-center">
+        <div class="step flex">
+            <img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12">
+            <p class="color-2 pd-left-10">Step 2 of 5</p>
+        </div>
+        <div class="mlAuto pointer mg-top-30" (click)="exit()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#ffff" stroke="#ffff" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div>
+    </div> -->
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 2 of 5</span> </p>
+        </div>
+    </div>
+
+    <div class="pd-left-25 pd-top-30 pd-right-20">
+        <p class="fs-27 fw-400 First_text">Employment</p>
+        <p class="pd-top-25 fs-27 fw-300">Details</p>
+    </div>
+    <form class="mg-bottom-auto mg-top-10" #userForm="ngForm">
+        <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25 cst-scroll">
+            <div class="flex-bottom relative cst-scroll-inner" style="min-width: 0px;">
+                <label class="Labelfont z-1">Please select your Industry type</label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15 mg-top-20" style="min-width: 0px;">
+                <label class=" ext-st pointer" [ngClass]="{ active: step === 'step1' }" (click)="step = 'step1'">Agriculture & Farming<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Agriculture & Farming" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <!-- ---? -->
+            <!-- <div class="flex-bottom relative mg-bottom-15 mg-top-20" style="min-width: 0px;">
+                <label class=" ext-st pointer" [ngClass]="{ active: step === 'step1' }" (click)="step = 'step1'">IT-ES/BPO/KPO<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="IT-ES/BPO/KPO" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div> -->
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step2' }" (click)="step = 'step2'">Banking / NBFC / Insurance<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Banking / NBFC / Insurance" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step3' }" (click)="step = 'step3'">BPO / IPO<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="BPO / IPO" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step4' }" (click)="step = 'step4'">Capital Goods & Manufacturing<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Capital Goods & Manufacturing" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step5' }" (click)="step = 'step5'">Construction<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Construction" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step6' }" (click)="step = 'step6'">E-commerce Retail<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="E-commerce Retail" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step7' }" (click)="step = 'step7'">Hotels & Hospitality<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Hotels & Hospitality" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step8' }" (click)="step = 'step8'">Healthcare<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Healthcare" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step9' }" (click)="step = 'step9'">IT & ITES<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="IT & ITES" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step10' }" (click)="step = 'step10'">Logistics & Transportation<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Logistics & Transportation" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step11' }" (click)="step = 'step11'">Marketing/Media/Advertising<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Marketing/Media/Advertising" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step12' }" (click)="step = 'step12'">Telecom<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Telecom" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step13' }" (click)="step = 'step13'">Other<input class="no-border no-outline pd-bottom-5 float-r" type="radio" value="Other" name="EmploymentDetail" [ngModel]="EmploymentDetail" required #EmploymentDetail="ngModel" (change)="EmploymentDetail1($event)"/></label>
+            </div>
+
+            <!-- <div *ngIf="EmploymentDetail.invalid && userForm.submitted && !isValidFormSubmitted" [ngClass]="'error'">
+                Feild required.
+            </div>
+            <div *ngIf="Error" class="error mg-bottom-15">
+                <p>
+                    {{error}}
+                </p>
+            </div> -->
+
+        </div>
+        <div *ngIf="EmploymentDetail.invalid && userForm.submitted && !isValidFormSubmitted" [ngClass]="'error'">
+            Feild required.
+        </div>
+        <div *ngIf="Error" class="error mg-bottom-15 mg-top-20 pd-right-25 pd-left-25">
+            <p>
+                {{error}}
+            </p>
+        </div>
+    </form>
+    <div class="button_div_common mg-bottom-35" *ngIf="buttonhide">
+        <button class="click-btn pointer" (click)="onFormSubmit(userForm)" [class.disabled]="isDisabled1" [disabled]="isDisabled1"><span class="button_div_common_text">Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+    </div>
+    <!-- [disabled]="!userForm.invalid"[disabled]="isDisabled==true" [ngClass]="{'disabledClass': isDisabled==true}" -->
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2" style="height: 165vh;">
+        <app-loader></app-loader>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <div class=" ">
+        <div class="logos-container1">
+            <div class="header-div pd-left-8 pd-right-20">
+                <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+                <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+            </div>
+            <div class="step1 step1-color">
+                <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Loan Sanctioned</span> </p>
+            </div>
+        </div>
+        <!-- <div class="pd-left-25 pd-top-25 pd-right-20">
+        <p class="fs-27 fw-100 First_text">EMI Offers <span class="First_text fs-22 fm-s">for</span></p>
+    </div> -->
+        <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2">
+            <div class="loadingio-spinner-rolling-sray298du2g">
+                <div class="ldio-ti8ltt9443b">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <form class="mg-bottom-100 page-two">
+            <div class="flex-bottom  pd-right-25 pd-left-25">
+                <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;z-index: 200;">
+                    <label class="mg-top-15 ext-st flex"> 
+                        <img [src]="Deviceimage" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="Imagehide">
+                    <img src="assets/Image/Apple-Image.png" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="!Imagehide">
+                        <!-- <div class="Image-section-phone">
+                            <img [src]="Deviceimage" alt="">
+                        </div>  -->
+                        <div class="text pd-left-13">
+                        <h1 class="color-1 deviceName">{{DeviceName}}</h1>
+                        <p class=" color-1 pd-top-4 fs-11">{{DeviceStorage}} | {{DeviceColor}}</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="flex-bottom  pd-right-25 pd-left-25">
+                <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;z-index: 200;">
+                    <label class="ext-st flex">
+                        <img [src]='Warrentyimage' alt="" width="55px" [hidden]="WarrentyimageHide">
+                        <img src='assets/Image/Warrenty_Image.png' alt="" width="55px" [hidden]="!WarrentyimageHide">
+                        <div class="text pd-left-13 mg-top-3">
+                        
+                        <h1 class="WarrentName color-1" >{{Warrentyname}}</h1>
+                        <p class=" color-1 pd-top-4">for {{Warrentytenor}} months</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="flex-bottom  pd-right-25 pd-left-25">
+                <div class="flex-bottom relative mg-bottom-40 height-180 pd-left-10 pd-right-10" style="min-width: 0px;">
+                    <label class="ext-st Last-label color-1"><span class="fw-600">₹{{EmiAmount}}</span><span class="fs-10"> /mo</span><span class="float-r fs-9 color-1"></span> <p class="fs-10">for {{Tenor}} months</p> 
+                        <hr style="border: 0.1px solid #E7E7E7;margin-bottom: 0;">
+                        <p class="fw-600">{{Scheme}}</p>
+                        <div class="description">
+                            <!-- <p class="dec-text">Scheme 9/0</p> -->
+                            <p class="dec-text">Scheme Down Payment<span class="float-r">₹{{SchemeDownpayment}}</span></p>
+                            <p class="dec-text"> Additional Down Payment<span class="float-r">₹{{AdditionalDownpayment}}</span></p>
+                            <p class="dec-text">Processing Fee<span class="float-r">₹{{processingfee}}</span></p>
+                            <p class="dec-text">Loan Amount<span class="float-r fs-11">₹{{LoanAmount}}</span></p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="flex-bottom pd-right-25 pd-left-30 pd-bottom-30 relative mg-top-20">
+                <div class="flexRight vCenter pdorder-div before-boredr">
+                    <img src="assets/Image/Active.png">
+                    <div class="flex1 fs12 bold font-size-18">Pre-Delivery Order</div>
+
+                </div>
+            </div>
+
+
+            <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20 pd-bottom-25 relative page-two-payment">
+                <div class="flexRight vCenter pdorder-div extra-boredr">
+                    <img src="assets/Image/Active.png" style="z-index: 200;">
+                    <div class="flex1 fs12 bold font-size-18">Down Payment Collected</div>
+                </div>
+                <div class="flex-bottom fs14 pd-right-25 pd-left-55 fw-100">
+                    <p class="fw-400 fs-11" style="color: rgba(17, 33, 54, 0.8);">The down payment of ₹{{totalDownpayment}} is collected</p>
+                </div>
+            </div>
+
+            <!-- ---------------------------Model----------------------------?-- -->
+
+            <!-- <div *ngIf="Model"> -->
+            <!-- <div [hidden]="!Modelsection" style="background-color: red;"> -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="pd-left-25 pd-top-25 pd-right-20">
+                            <p class="fs-22 fw-100 First_text let-sp">Congratulations!</p>
+
+                        </div>
+                        <form class="mg-bottom-auto">
+                            <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25">
+                                <div class="flex-bottom relative mg-bottom-25" style="min-width: 0px;">
+                                    <label class="fw-500 fs-10 absolute bg-white-100 z-1" style="letter-spacing: 0.02em;">Please handover the device to the customer</label>
+                                </div>
+
+                            </div>
+                        </form>
+                        <div class="continue-btn pd-right-25 pd-left-25 flex">
+                            <button class="click-btn1 pointer" (click)="homepage()" data-dismiss="modal">Home Page</button>
+                            <button class="click-btn pointer" style="width: 50%;" (click)="download($event)" [disabled]="isdisable==false"><span class="continue-text">Download DO</span></button>
+                        </div>
+                    </div>
+                    <div class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2" [hidden]="!Loader2">
+                        <div class="loadingio-spinner-rolling-sray298du2g">
+                            <div class="ldio-ti8ltt9443b">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------------------End-Model----------------------------?-- -->
+
+            <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20 pd-bottom-30 relative">
+                <div class="flexRight vCenter pdorder-div before-boredr gray_border">
+                    <img src="assets/Image/Active.png">
+                    <div class="flex1 fs14 bold font-size-18">Device Validation</div>
+
+                </div>
+                <div class="flex-bottom fs14 pd-right-25 pd-left-55 fw-100">
+                    <p class="fw-400 fs-11" style="color: rgba(17, 33, 54, 0.8);">IMEI: {{IMEINumber}}</p>
+                </div>
+
+            </div>
+            <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20">
+                <div class="flexRight vCenter pdorder-div">
+                    <img src="assets/Image/Active8.png">
+                    <div class="flex1 fs14 font-size-18">Handover the device</div>
+                </div>
+                <div>
+                    <!-- <button type="button" class="fs14 pd-top-5 pd-bottom-5 confirm-button no-outline mg-left-20 pointer" (click)="proceed($event)" data-toggle="modal" data-target="#myModal">Proceed</button> -->
+                    <button type="button" class="fs14 pd-top-5 pd-bottom-5 confirm-button no-outline mg-left-20 pointer" (click)="proceed($event)" [class.disabled]="isDisabled1" [disabled]="isDisabled1">Proceed</button>
+                </div>
+                <!-- [ngClass]="{'disabledClass': isDisabled==true}" -->
+            </div>
+
+
+
+
+
+        </form>
+
+        <!-- -----Static--model-------------------->
+
+        <div class="z-1000 absolute trbl-0 vh-center bg-black-50" style="position: fixed !important;" [hidden]="!Modelsection">
+            <div class="modal1  Box-div ">
+                <div class="pd-left-25 pd-top-50 pd-right-20">
+                    <p class="fs-27 fw-400 First_text">Congratulations!</p>
+
+                </div>
+                <form class="mg-bottom-auto">
+                    <div class="flex-bottom mg-top-15 pd-right-25 pd-left-25 mg-bottom-25">
+                        <div class="flex-bottom relative mg-bottom-25" style="min-width: 0px;">
+                            <label class="Labelfont pd-top-12 bg-white-100 z-1">Please handover the device to the customer</label>
+                        </div>
+
+                    </div>
+                </form>
+                <div class="button_div_common pd-right-25 pd-left-25 flex">
+                    <button class="click-btn1 pointer" (click)="homepage()" data-dismiss="modal">Home Page</button>
+                    <button class="click-btn pointer" style="width: 50%;" (click)="download($event)" [disabled]="isdisable==false" [class.disabled]="isdisable==false"><span class="button_div_common_text1" style="text-align:center;">Download DO</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----- END-Static--model-------------------->
+
+
+
+
+
+        <!-- --Loader------------------ -->
+        <!-- <ng-template [ngIf]="Loader1"> -->
+        <div class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2" style="height:135vh;" [hidden]="!Loader1">
+            <div class="loadingio-spinner-rolling-sray298du2g">
+                <div class="ldio-ti8ltt9443b">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- </ng-template> -->
+
+
+
+    </div>
+</div>

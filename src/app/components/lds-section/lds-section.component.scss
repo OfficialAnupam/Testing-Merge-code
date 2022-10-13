@@ -1,0 +1,398 @@
+
+.container-main {
+    max-width: 600px;
+}
+.escroll {
+    overflow: scroll;
+}
+
+.logos-container {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background: #4c10c1;
+    // height: 50px;
+    padding-top: 45px;
+}
+
+body {
+    height: 10000px;
+}
+
+b {
+    font-weight: bold;
+}
+
+.disbursement {
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    color: #1a90f7;
+}
+
+// .escroll {
+//     overflow-y: scroll;
+//     height: 35em;
+// }
+
+.escroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sticky-div {
+    font-size: 3rem;
+    position: sticky;
+    top: 0;
+    background-color: pink;
+}
+
+.continue-btn {
+    position: static;
+    width: 100%;
+    text-align: center;
+    // padding-top: 60px;
+    // margin-bottom: 10px;
+}
+
+.First_text {
+    color: #112136;
+}
+
+.continue-btn {
+    .click-btn {
+        width: 90%;
+        height: 50px;
+        background: #4c10c1;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        mix-blend-mode: normal;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.click-btn1 {
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 1.2px solid #111111;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 50%;
+    margin-right: 15px;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.continue-text {
+    float: left;
+    padding-left: 10px;
+    padding-top: 3px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "SF Pro";
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+    .container {
+        max-width: 600px;
+        padding: 20px 20px 15px 20px;
+        margin-right: auto;
+        margin-left: auto;
+        // box-shadow: 0px 2px 20px -1px rgba(69, 69, 69, 0.61);
+        box-shadow: 0px 6px 20px -1px rgb(255 255 255);
+        .loan-detail-sheet {
+            p {
+                border: 1px solid #1A90F7;
+                padding: 8px 20px;
+                font-family: sans-serif;
+                font-size: 15px;
+                color: #1A90F7;
+                margin-top: 1rem;
+                letter-spacing: 0.6px;
+                margin-bottom: 10px;
+            }
+            .sub-section {
+                // padding: 0 20px;
+                label {
+                    line-height: 35px;
+                    font-size: 14px;
+                    font-family: sans-serif;
+                    color: #1A90F7;
+                    letter-spacing: 0.3px;
+                }
+                h5 {
+                    font-size: 14px;
+                    font-family: 'Source Sans Pro';
+                    font-weight: 600;
+                    // margin: 8px 0;
+                    color:#2a2727;
+                    margin-bottom: 10px;
+                }
+                .sub-section-1 {
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    label {
+                        line-height: 20px;
+                        color:gray;
+                    }
+                    .sub-section-2 {
+                        display: grid;
+                        text-align: end;
+                        padding-bottom: 20px;
+                        label {
+                            display: contents;
+                            text-align: right;
+                            color: black;
+                            span {
+                                color: #777777;
+                                padding: 3px 0;
+                            }
+                        }
+                    }
+                }
+                .loan-detail {
+                    h5 {
+                        max-width: 50%;
+                    }
+                    label {
+                        max-width: 50%;
+                        text-align: end;
+                    }
+                }
+            }
+        }
+        mat-card {
+            .submit {
+                display: grid;
+                button {
+                    border: 1px solid #1A90F7;
+                    padding: 8px 20px;
+                    font-family: sans-serif;
+                    font-size: 15px;
+                    color: white;
+                    letter-spacing: 0.6px;
+                    background: #4C10C1;
+                    // width: 80%;
+                    // margin: 0 50px;
+                    max-width: 100%;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    box-shadow: none;
+                }
+                button:focus {
+                    outline: none;
+                }
+                .disabledBtn {
+                    border: 1px solid #909090;
+                    background: #80808045;
+                    color: #909090;
+                    cursor: no-drop;
+                }
+            }
+            // margin-top: 20px;
+            box-shadow:none;
+            padding:0px;
+        }
+    }
+
+
+
+.flexBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.alignCenter {
+    align-items: center;
+    align-content: center;
+}
+
+.z200 {
+    z-index: 200;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// new loader css
+@keyframes ldio-6hoh5fvyavc {
+    0% {
+        top: 147px;
+        left: 147px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 103.5px;
+        left: 103.5px;
+        width: 87px;
+        height: 87px;
+        opacity: 0;
+    }
+}
+
+.ldio-6hoh5fvyavc div {
+    position: absolute;
+    border-width: 3px;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 50%;
+    animation: ldio-6hoh5fvyavc 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-6hoh5fvyavc div:nth-child(1) {
+    border-color: #087eb0;
+    animation-delay: 0s;
+}
+
+.ldio-6hoh5fvyavc div:nth-child(2) {
+    border-color: #46dff0;
+    animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-vn8rakm316 {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.ldio-6hoh5fvyavc {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+}
+
+.ldio-6hoh5fvyavc div {
+    box-sizing: content-box;
+}
+
+
+// --------lds custom css start-------------------
+
+.label_left_right_wrapper:before, .label_left_right_wrapper:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.label_left {
+    float: left;
+}
+.label_right{
+    float: right;
+}
+.label_left_right_wrapper .label_left {
+    font-weight: 600;
+    font-size: 14px;
+}
+.label_left_right_wrapper{
+    margin-bottom: 10px !important;
+}
+.loan_application_heading h3 {
+    font-size: 16px;
+    color: #1A90F7;
+}
+.blue_horizontal {
+    border-top: 3px solid rgb(26 144 247);
+}
+.loan_application_wrapper {
+    margin-top: 30px;
+}
+.loan-detail-sheet-heading {
+    text-align: left;
+    // font-family: sans-serif;
+    border: 1px solid #1A90F7;;
+    padding: 5px 15px;
+    color: #1A90F7;
+}
+.loan_details_h4{
+    font-size: 16px;
+    color: #1A90F7;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.undertaking ul {
+    padding: 0px;
+    margin: 0px;
+}
+.undertaking ul li {
+    margin-bottom: 10px;
+    list-style: decimal;
+}
+.acknowledgement p,.loan_agreement p,.instruction_section p{
+    margin-bottom: 15px;
+}
+.loan_details_h3 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+.instruction_section ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 13px;
+}
+::-webkit-scrollbar-thumb {
+    background: #b5a7a7;
+    border-radius: 10px;
+}
+.continue_bottom_btn {
+    position: sticky;
+    bottom: 0px;
+    top: auto;
+    padding: 0px;
+    left: 0;
+    right: 0px;
+}
+.mat-checkbox{
+    background: #F5F8FA;
+    padding: 20px 20px;
+    font-style: normal;
+   font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  font-family: "Source Sans Pro";
+}
+.cst-mg-bottom-15{
+    margin-bottom: 15px !important;
+}
+.lds_heading-5 {
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+}
+.yes_no_check {list-style: none;position: relative;}
+.yes_no_check li {display: inline-block;font-weight: 600;font-size: 15px;}
+.yes_no_check li:not(:first-child) {margin-left: 10px;}
+.yes_no_check li:first-child:before {content: '';width: 13px;height: 13px;display: inline-block;position: relative;top: 0px;bottom: 0px;left: 0px;right: 0px;background-color: #6dde6d;margin-right: 5px;}
+.yes_no_check li:last-child:before {content: '';width: 13px;height: 13px;display: inline-block;position: relative;top: 0px;bottom: 0px;left: 0px;right: 0px;background-color: #000;margin-right: 5px;}
+
+//---------lds custom css stop--------------------
+
+@media(max-width:767px){
+    .container{
+        padding: 15px 15px 15px 15px;
+    }
+    .undertaking ul{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .continue_bottom_btn{
+        padding: 0px;
+    }
+}

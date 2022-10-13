@@ -1,0 +1,169 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <!-- <div class="logos-container pd-25 pd-top-10 v-center">
+        <div class="step flex">
+            <img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12">
+            <p class="color-2 pd-left-10">Step 2 of 5</p>
+        </div>
+        <div class="mlAuto pointer mg-top-30" (click)="exit()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#ffff" stroke="#ffff" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div>
+
+    </div> -->
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 2 of 5</span> </p>
+        </div>
+    </div>
+    <div class="pd-left-25 pd-top-30 pd-right-20">
+        <p class="fs-27 fw-500 First_text">Bank</p>
+        <p class="pd-top-25 fs-27 fw-300">Details</p>
+    </div>
+    <div class="mg-bottom-auto">
+        <div class="flex-bottom mg-top-25 pd-right-25 pd-left-25 fs-12 fw-500">
+
+            Get better schemes with lower down payments.
+        </div>
+
+        <div class="flex-bottom mg-top-25 pd-right-25 pd-left-25 fs-12 ">
+            <p class="fw-500">An SMS has been sent to <span class="fw-600">{{Mobile}}</span></p>
+            <!-- <p class="pd-top-5">+91- <span class="fw-600">{{Mobile}}</span></p> -->
+        </div>
+        <div class="flex-bottom mg-top-25 pd-right-25 pd-left-25 fs-12 fw-600" style="color: #112136;">
+            Please use the link on the SMS to share your bank statements in just 2 clicks.
+        </div>
+        <div class="resend pd-left-25 mg-top-20" style="font-size: 14px;">
+            <p class="pointer fw-600" (click)="AAfailed()" *ngIf="!resendtimer"><a>Resend link</a></p>
+            <p *ngIf="showTimer" class="error mg-bottom-15 mg-top-10 fs-12">Resend link in {{timeLeft}}s</p>
+        </div>
+        <div class="error pd-left-25 mg-top-15">
+            <p>
+                {{error}}
+            </p>
+        </div>
+        <!-- *ngIf="ErrorAA" -->
+        <!-- <div class="pd-left-25 mg-top-15" *ngIf="ErrorAA">
+            <p class="error">
+                {{error}}
+            </p>
+            <div class="mg-top-20">
+                <button class="retrybutton pointer" (click)="AAfailed()">Retry</button>
+            </div>
+        </div> -->
+
+        <div *ngIf="Loader1" class=" vh-center bg-white-50">
+            <div class="loadingio-spinner-rolling-sray298du2g">
+                <div class="ldio-ti8ltt9443b">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="pd-right-25 pd-left-10 mg-right-auto Below-button">
+        <p><a href="#">Cancel</a></p>
+        <button class="click-btn pointer">Proceed</button>
+    </div> -->
+
+    <div class="continue-btn mg-bottom-35">
+        <!-- <div class="pd-top-10 mg-bottom-10 fs-13 AA pointer" (click)="continueFour()"><a>Proceed without banking information</a></div> -->
+        <div class="pd-top-10 mg-bottom-10 fs-13 AA pointer" (click)="AAwithout()"><a>Proceed without banking information</a></div>
+    </div>
+    <!-- <div *ngIf="Loader1 " class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2 loader-height">
+        <app-loader></app-loader>
+    </div> -->
+
+    <!-- <div class="alert-popup vh-center">
+        <div>
+            <p>Alert</p>
+        </div>
+    </div> -->
+    <!-- ----------------------------------------------------Alert-Model------ -->
+
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
+
+                </div> -->
+                <div class="modal-body">
+                    <div>
+                        <p>Alert</p>
+                        <div>
+                            Banking information is essential step of loan application, Are you sure you want to cancel the journey.
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- -------------------------------------End-Model---------------------------------- -->
+
+    <!-- --------------------------Static---Model---------------------------- -->
+    <div class="z-1000 absolute trbl-0 vh-center bg-black-50" style="position: fixed !important;" *ngIf="modelView">
+        <div class="modal1 Box-div ">
+            <div class="pd-left-25 pd-top-40 pd-right-20 mg-bottom-20">
+                <p class="fs-27 fw-300 First_text">Alert</p>
+
+            </div>
+            <form class="mg-bottom-auto">
+                <div class="flex-bottom mg-top-15 pd-right-25 pd-left-25">
+                    <div class="flex-bottom relative mg-bottom-100" style="min-width: 0px;">
+
+                        <label class="Labelfont bg-white-100 z-1">Banking information is essential step of loan application, Are you sure you want to cancel the journey.</label>
+                        <div class="mg-top-20 flex">
+                            <div class="pd-top-10 mg-bottom-10 fs-13 AA pointer" (click)="continueFour()"><a>Test success journey</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+            <div class="button_div_common pd-right-25 pd-left-25 flex">
+                <button class="click-btn1 pointer" (click)="ExitModel()">Yes</button>
+                <button class="click-btn pointer" style="width: 50% !important;" (click)="ModelClose()"><span class="button_div_common_text">No</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt="" (click)="ModelClose()"></span></button>
+            </div>
+
+        </div>
+    </div>
+    <!-- --------------------------End-Static---Model---------------------------- -->
+</div>

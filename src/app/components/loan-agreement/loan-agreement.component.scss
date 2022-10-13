@@ -1,0 +1,112 @@
+.container {
+    margin: 0;
+    padding: 0;
+    .sub-section {
+        b {
+            color: #000000cc;
+            font-weight: bold;
+        }
+        p {
+            padding-left: 22px;
+            color: #f33333b0;
+        }
+        label {
+            line-height: 35px;
+            font-size: 15px;
+            font-family: sans-serif;
+            color: #1A90F7;
+            letter-spacing: 0.3px;
+        }
+        h5 {
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: 600;
+            margin: 8px 0;
+            color: #1A90F7;
+            padding: 0 22px;
+        }
+        .sub-section-1 {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            label {
+                line-height: 20px;
+                color: #777777;
+            }
+            .sub-section-2 {
+                display: grid;
+                text-align: end;
+                padding-bottom: 20px;
+                label {
+                    text-align: right;
+                    color: #777777;
+                }
+            }
+        }
+        .loan-detail {
+            h5 {
+                max-width: 50%;
+                font-size: 14px;
+                color: rgba(0, 0, 0, .77) !important;
+            }
+            label {
+                padding: 0 22px;
+                font-size: 14px;
+                text-align: end;
+            }
+        }
+        // .mat-panel {
+        //     label {
+        //         //padding: 0 10px;
+        //     }
+        // }
+    }
+    .Verifiction {
+        color: #F73333 !important;
+    }
+    .sub-section-intro {
+        padding: 0 20px;
+        p {
+            padding: 0;
+        }
+        h5 {
+            padding: 0;
+            text-decoration: underline;
+            font-size: 15px;
+        }
+        label {
+            color: #777777;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    }
+    .sub-section-sel {
+        padding: 5px 24px;
+        .mat-checkbox {
+            padding-right: 40px;
+        }
+        .check1 {
+             ::ng-deep .mat-checkbox .mat-checkbox-frame {
+                border-color: #08af53;
+            }
+             ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+                background-color: #08af53 !important;
+            }
+        }
+        .check2 {
+             ::ng-deep .mat-checkbox .mat-checkbox-frame {
+                border-color: #065189;
+            }
+             ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+                background-color: #065189 !important;
+            }
+        }
+    }
+    .header {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: sans-serif;
+        color: #1a90f7;
+    }
+}

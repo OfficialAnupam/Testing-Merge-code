@@ -1,0 +1,113 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <!-- <div class="logos-container pd-25 pd-top-10 v-center">
+        <div class="step flex">
+            <img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12">
+            <p class="color-2 pd-left-10">Step 3 of 5</p>
+        </div>
+        <div class="mlAuto pointer mg-top-30" (click)="exit()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#ffff" stroke="#ffff" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div>
+    </div> -->
+
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 3 of 5</span> </p>
+        </div>
+    </div>
+    <div class="pd-left-25 pd-top-25 pd-right-20">
+        <p class="fs-27 First_text"><span class="fw-400">EMI Offers</span> <span class="fs-22 pd-left-5">for</span></p>
+    </div>
+    <form class="mg-bottom-auto mg-bottom-30">
+        <div class="flex-bottom  pd-right-25 pd-left-25 ">
+            <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;">
+                <label class="mg-top-20 offer-div flex "> 
+                    <img [src]="Deviceimage" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="Imagehide">
+                    <img src="assets/Image/Apple-Image.png" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="!Imagehide">
+                    <!-- <img src="assets/Image/image-2.png" alt=""> -->
+                   
+                    <div class="text mg-right-auto pd-left-13">
+                    <h1 class="color-1 deviceName">{{DeviceName}}</h1>
+                    <p class=" color-1 pd-top-3 fs-10">{{DeviceStorage}} | {{DeviceColor}}</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p class="fw-600">{{Deviceprice | currency:'INR':'symbol':'3.0'}}</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="flex-bottom  pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;">
+                <label class="offer-div flex">
+                    <!-- <img src="assets/Image/image-1.png" alt=""> -->
+                    <img [src]='Warrentyimage' alt="" width="55px" [hidden]="WarrentyimageHide">
+                    <img src='assets/Image/Warrenty_Image.png' alt="" width="55px" [hidden]="!WarrentyimageHide">
+                    <div class="text pd-left-13 mg-top-5 mg-right-auto" >
+                    <h1 class="color-1 WarrentName">{{Warrentyname}}</h1>
+                    <p class=" color-1 pd-top-4">for {{Warrentytenor}} months</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p style="font-weight: bold;">{{Warrentyprice | currency:'INR':'symbol':'3.0'}}</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="flex-bottom relative grid mg-top-10" style="min-width: 0px;">
+            <div class="pd-right-25 pd-left-30 " style="margin-right: auto;">
+                <p class="fw-600">Total</p>
+
+            </div>
+            <div style="margin-left: auto; " class="mg-right-40 mg-bottom-10">
+                <p class="fw-600">{{(TotalAmount) | currency:'INR':'symbol':'1.0'}}</p>
+            </div>
+        </div>
+        <!-- <div class="cst-scroll cst-scroll-inner"> -->
+        <div class="flex-bottom  pd-right-25 pd-left-25 " *ngFor="let product of products; let i= index">
+            <div class="flex-bottom relative mg-bottom-12 pd-top-15 border-change" style="min-width: 0px;">
+                <label class="ext-st pointer ext-st1"><span class="fw-600">{{product.EMI_Amount | currency:'INR':'symbol':'1.0'}} </span> <span class="fs-10">/mo</span> <input class="no-border no-outline pd-bottom-5 float-r" type="radio" name="name" [value]="product" id="name" (change)="onItemChange(product)" /> <p class="fs-10 pd-top-3 pd-bottom-4">for {{product.EMI_Tenor}} months</p> 
+                <hr style="border: 0.1px solid #E7E7E7;margin-bottom: 0;">
+                <p class="fw-600">Scheme {{product.Scheme}}</p>
+                <div class="description">
+                    <!-- <p class="dec-text">Scheme 9/0</p> -->
+                    <p class="dec-text">Scheme Down Payment<span class="float-r">{{ product.Scheme_Down_Payment | currency:'INR':'symbol':'1.0'}}</span></p>
+                    <p class="dec-text"> Additional Down Payment<span class="float-r">{{product.Additional_Down_Payment | currency:'INR':'symbol':'1.0'}}</span></p>
+                    <p class="dec-text">Processing Fee<span class="float-r">{{product.Processing_Fee | currency:'INR':'symbol':'1.0'}}</span></p>
+                    <p class="dec-text">Loan Amount<span class="float-r fs-11">{{product.Loan_Amount | currency:'INR':'symbol':'1.0'}}</span></p>
+                </div>
+                </label>
+
+            </div>
+        </div>
+        <!-- </div> -->
+    </form>
+    <div class="button_div_common" *ngIf="buttonHide">
+        <button class="click-btn pointer" (click)="continueKYC()"><span class="button_div_common_text">Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+    </div>
+
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2" style="height: 155vh;">
+        <app-loader></app-loader>
+    </div>
+</div>

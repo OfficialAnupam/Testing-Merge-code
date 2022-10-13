@@ -1,0 +1,137 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <!-- <div class="logos-container pd-25 pd-top-10 v-center">
+        <div class="step flex">
+            <img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12">
+            <p class="color-2 pd-left-10">Loan Sanctioned</p>
+        </div>
+        <div class="mlAuto pointer mg-top-30" (click)="exit()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#ffff" stroke="#ffff" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div>
+    </div> -->
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Loan Sanctioned</span> </p>
+        </div>
+    </div>
+    <!-- <div class="pd-left-25 pd-top-25 pd-right-20">
+        <p class="fs-27 fw-100 First_text">EMI Offers <span class="First_text fs-22 fm-s">for</span></p>
+    </div> -->
+    <form class="mg-bottom-15">
+        <div class="flex-bottom  pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;z-index: 200;">
+                <label class="mg-top-15 ext-st flex"> 
+                    <img [src]="Deviceimage" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="Imagehide">
+                    <img src="assets/Image/Apple-Image.png" alt="" style="max-width: 55px;max-height: 55px;" [hidden]="!Imagehide">
+                    <!-- <div class="Image-section-phone">
+                        <img [src]="Deviceimage" alt="">
+                    </div>  -->
+                    <div class="text pd-left-13">
+                    <h1 class="color-1 deviceName">{{DeviceName}}</h1>
+                    <p class=" color-1 pd-top-4 fs-11">{{DeviceStorage}} | {{DeviceColor}}</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="flex-bottom  pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-12" style="min-width: 0px;z-index: 200;">
+                <label class="ext-st flex">
+                    <img [src]='Warrentyimage' alt="" width="55px" [hidden]="WarrentyimageHide">
+                    <img src='assets/Image/Warrenty_Image.png' alt="" width="55px" [hidden]="!WarrentyimageHide">
+                    <div class="text pd-left-13 mg-top-3">
+                    
+                    <h1 class="WarrentName color-1" >{{Warrentyname}}</h1>
+                    <p class=" color-1 pd-top-4">for {{Warrentytenor}} months</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="flex-bottom  pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-40 height-180 pd-left-10 pd-right-10" style="min-width: 0px;">
+                <label class="ext-st Last-label color-1"><span class="fw-600">{{EmiAmount | currency:'INR':'symbol':'1.0'}}</span><span class="fs-10"> /mo</span><span class="float-r fs-9 color-1"></span> <p class="fs-10">for {{Tenor}} months</p> 
+                    <hr style="border: 0.1px solid #E7E7E7;margin-bottom: 0;">
+                    <p class="fw-600">{{Scheme}}</p>
+                    <div class="description">
+                        <!-- <p class="dec-text">Scheme 9/0</p> -->
+                        <p class="dec-text">Scheme Down Payment<span class="float-r">{{SchemeDownpayment | currency:'INR':'symbol':'1.0'}}</span></p>
+                        <p class="dec-text"> Additional Down Payment<span class="float-r">{{AdditionalDownpayment | currency:'INR':'symbol':'1.0'}}</span></p>
+                        <p class="dec-text">Processing Fee<span class="float-r">{{processingfee |currency:'INR':'symbol':'1.0'}}</span></p>
+                        <p class="dec-text">Loan Amount<span class="float-r fs-11">{{LoanAmount |currency:'INR':'symbol':'1.0'}}</span></p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="flex-bottom pd-right-25 pd-left-30 relative pd-bottom-20 mg-top-20">
+            <div class="flexRight vCenter pdorder-div before-boredr">
+                <img src="assets/Image/Active.png">
+                <div class="fs12 bold font-size-18">Pre-Delivery Order</div>
+
+
+            </div>
+            <div><button class="w100 pd-top-5 pd-bottom-5 confirm-button1 no-outline" (click)="showPreDelivery()" [class.disabled]="isDisabled1" [disabled]="isDisabled1">Download</button></div>
+
+        </div>
+
+        <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20 relative pd-bottom-25">
+            <div class="flexRight vCenter pdorder-div extra-boredr">
+                <img src="assets/Image/Active1.png" style="z-index: 200;">
+                <div class="flex1 fs12 bold font-size-18">Collect Payment</div>
+            </div>
+            <div class="flex-bottom fs14 pd-right-25 pd-left-55 fw-100 pd-bottom-15" style="padding-right: 0px;">
+                <p class="fw-400 fs-11" style="color: rgba(17, 33, 54, 0.8); ">Please collect the down payment of {{totalamount1 | currency:'INR':'symbol':'1.0'}}</p>
+            </div>
+            <div>
+                <button class="fs14 pd-top-5 pd-bottom-5 confirm-button no-outline mg-left-20" (click)="procceed()" [class.disabled]="isDisabled" [disabled]="isDisabled">Confirm</button>
+            </div>
+        </div>
+        <!-- <div class="flex-bottom pd-right-25 pd-left-30 mg-left-20">
+            <div class=" vCenter pdorder-div">
+                <img src="assets/Image/Rectangle2.png">
+            </div>
+        </div> -->
+        <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20 relative pd-bottom-30">
+            <div class="flexRight vCenter pdorder-div before-boredr gray_border">
+                <img src="assets/Image/Active3.png">
+                <div class="flex1 fs14 font-size-18" style="color: rgba(17, 33, 54, 0.4);">Device Validation</div>
+            </div>
+
+        </div>
+        <div class="flex-bottom pd-right-25 pd-left-30 pd-top-min-20">
+            <div class="flexRight vCenter pdorder-div">
+                <img src="assets/Image/Active4.png">
+                <div class="flex1 fs14 font-size-18" style="color: rgba(17, 33, 54, 0.4);">Handover the device</div>
+            </div>
+
+        </div>
+        <!-- <div class="continue-btn">
+            <button class="click-btn pointer"><span class="continue-text">Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+        </div> -->
+    </form>
+
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2" style="height: 130vh;">
+        <app-loader></app-loader>
+    </div>
+</div>

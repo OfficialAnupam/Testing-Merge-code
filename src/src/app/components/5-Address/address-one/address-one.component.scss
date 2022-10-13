@@ -1,0 +1,33 @@
+.container-main {
+    max-width: 600px;
+}
+
+.logos-container {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background: #4C10C1;
+    // height: 50px;
+}
+
+.step {
+    padding-top: 45px;
+    letter-spacing: 1.5px;
+}
+
+.continue-btn {
+    position: static;
+    padding-top: 50px;
+}
+
+.First_text {
+    color: #112136;
+}
+
+.caution {
+    background: linear-gradient(0deg, rgba(168, 46, 60, 0.1), rgba(168, 46, 60, 0.1)), #FFFFFF;
+    mix-blend-mode: normal;
+    border: 0.4px solid rgba(17, 33, 54, 0.2);
+    box-sizing: border-box;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

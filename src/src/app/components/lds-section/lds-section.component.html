@@ -1,0 +1,885 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt=""
+                        class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 5 of 5</span> </p>
+        </div>
+    </div>
+
+    <div class="container escroll">
+        <div class="loan-detail-sheet">
+            <h3 class="loan-detail-sheet-heading">Loan Details Sheet</h3>
+            <div class="sub-section">
+                <div class="sub-section-1 loan-detail">
+                    <h5>Name of the Borrower</h5>
+                    <label>{{userDetails.First_Name?userDetails.First_Name:'-'}} {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Address of the Borrower</h5>
+                    <label>{{userDetails.Mailing_Address?userDetails.Mailing_Address:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Device Model</h5>
+                    <label>{{userDetails.Device_Model?userDetails.Device_Model:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Device IMEI/Serial Number</h5><label>{{userDetails.Device_IMEI?userDetails.Device_IMEI:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Device Loan Amount</h5>
+                    <label>{{userDetails.Loan_Amount?(userDetails.Loan_Amount|customCurrency):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Warranty Purchased</h5>
+                    <label>{{userDetails.Warranty_Purchased?(userDetails.Warranty_Purchased):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Warranty Loan Amount</h5>
+                    <label>{{userDetails.Warranty_Loan_Amount?(userDetails.Warranty_Loan_Amount|customCurrency):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Total Loan Amount (Device Loan + Warranty Loan Amount) </h5>
+                    <label>{{userDetails.EMI?(totalAmount|customCurrency):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Rate of Interest</h5>
+                    <label>{{userDetails.Loan_Rate?userDetails.Loan_Rate:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Tenor (in Months)</h5>
+                    <label>{{userDetails.Loan_Tenor_in_Month?userDetails.Loan_Tenor_in_Month:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Other fees or charges</h5>
+                    <label>{{userDetails.Processing_Fee?(userDetails.Processing_Fee|customCurrency):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Monthly EMI Amount</h5><label>{{userDetails.EMI?(userDetails.EMI|customCurrency):'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>First EMI Due Date</h5><label>{{userDetails.EMI_Start_Date?userDetails.EMI_Start_Date:'-'}}</label>
+                </div>
+                <!-- <div class="sub-section-1 loan-detail" >
+            <h5>Payment Cheques</h5><label>{{userDetails.Payment_Cheques?userDetails.Payment_Cheques:'-'}}</label>
+        </div> -->
+                <div class="sub-section-1 loan-detail">
+                    <h5>Mode of Repayment</h5>
+                    <label>{{userDetails.Mode_Loan_Repayment?userDetails.Mode_Loan_Repayment:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Bounce Charges</h5>
+                    <label>{{userDetails.Bounce_Charge?userDetails.Bounce_Charge:'-'}}</label>
+                </div>
+                <div class="sub-section-1 loan-detail">
+                    <h5>Penal Charges</h5><label>{{userDetails.Penal_Charges?userDetails.Penal_Charges:'-'}}</label>
+                </div>
+                <!-- <div class="sub-section-1 loan-detail" style="text-align: justify;">
+                    <p style="color:#777777;border: none;padding: 0px;"><b>1. </b> I/We hereby apply for a finance
+                        facility for the short term personal loan (“Facility”) mentioned in this application. I/We
+                        declare that all the particulars and information and details given/filled in this
+                        Application
+                        Form
+                        are true, correct, complete and up-to date in all respects and no information has been
+                        withheld.
+                        I/We understand that the information given in this application shall form the basis of any
+                        loan
+                        that DMI Finance Private Limited (“DMI”)
+                        may decide to grant to me/us and if at any stage of processing this application, it comes to
+                        the
+                        knowledge of DMI that, I/we have provided any incorrect or incomplete information,
+                        fabricated
+                        documents, or fake documents, they will
+                        be treated by DMI as having been manipulated by me/us and DMI shall have the right to
+                        forthwith
+                        reject this loan application, cancel / revoke any sanction or further drawdowns or recall
+                        any
+                        loan granted at any stage of processing
+                        the application, without assigning any reason whatsoever and DMI and its employees/
+                        representatives/ agents / service providers shall not be responsible/liable in any manner
+                        whatsoever to me/us for such rejection or any delay in
+                        notifying me/us of such rejection (including for any payments which may have been made by me
+                        to
+                        any vendor/ service provider prior to cancellation).
+                        <br><br>
+                        <b>2. </b> I/We understand that DMI will also be procuring personal information from other
+                        sources/agents and I/We have no objection for the same. I/We authorize DMI to make reference
+                        and
+                        inquire relating to information in this
+                        application which DMI considers necessary, including from the banks where I/we hold bank
+                        accounts.
+                        <br><br>
+                        <b>3. </b> I/We hereby give my/our consent voluntarily for use of AADHAAR card/details for
+                        the
+                        purposes of availing the Facility including KYC purposes as required under applicable laws
+                        and
+                        as per DMI policies. I/We hereby give
+                        our consent to DMI to procure my /our AADHAAR details, PAN No/copy of my/our PAN Card, other
+                        identity proof and Bank Account details from time to time, exchange, part with/share all
+                        information relating to my/our loan details and
+                        repayment history with other banks/financial institutions /CIBIL etc. and periodically
+                        obtain /
+                        generate CIBIL, Experian, Hunter and such other reports as may be required and shall not
+                        hold
+                        DMI liable for use of this information.
+                        I/We do hereby expressly and irrevocably authorize DMI to collect, store, share, obtain and
+                        authenticate any aspect of my/our personal information either directly or through any of the
+                        authorized agencies and disclose such information
+                        to its agents/contractors/service providers and to also use such information for the
+                        purposes of
+                        KYC authentication, grant of the Facility and for internal evaluation by DMI of its
+                        business.
+                        For more details please <a href="https://www.dmifinance.in/privacy-policy.html"
+                            target="_blank">click here</a>.<br><br>
+                        <b>4. </b> I/We hereby give my/our consent voluntarily for use of PAN or Aadhar card/details
+                        for
+                        the purposes of fetching CKYC from CERSAI for the purposes as required under applicable laws
+                        and
+                        as per DMI policies. I/We hereby
+                        give our consent to DMI to procure my AADHAAR details, PAN No/copy of my/our PAN Card, other
+                        identity proof and Bank Account details from time to time for use as per policy and shall
+                        not
+                        hold DMI liable for use of this information.
+                        I/We do hereby expressly and irrevocably authorize DMI to collect, store, share, obtain and
+                        authenticate any aspect of my/our personal information directly from CERSAI and disclose
+                        such
+                        information to its agents/contractors/service
+                        providers and to also use such information for the purposes of KYC authentication, grant of
+                        the
+                        Facility and for internal evaluation by DMI of its business.<br><br>
+                        <b>5. </b> I/We, would like to know through telephonic calls, or SMS/WhatsApp on my mobile
+                        number mentioned in the Application Form as well as in this undertaking, or through any
+                        other
+                        communication mode, transactional information,
+                        various loan offer schemes or loan promotional schemes or any other promotional schemes
+                        which
+                        may be provided by DMI and hereby authorize DMI and their employee, agent, associate to do
+                        so. I
+                        confirm that laws in relation to the
+                        unsolicited communication referred in “National Do Not Call Registry” (the “NDNC Registry”)
+                        as
+                        laid down by TELECOM REGULATORY AUTHORITY OF INDIA will not be applicable for such
+                        communication/calls/SMSs/WhatsApp messages received
+                        from DMI, its employees, agents and/or associates.
+                        <br><br>
+                        <b>6. </b> I/We acknowledge that Sourcing Partner and DMI are independent of each other and
+                        I/we
+                        will not have any claim against DMI for any loan or other facility arranged/ provided by
+                        Sourcing Partner which is not sanctioned/
+                        disbursed by DMI. I acknowledge that DMI does not in any manner make any representation,
+                        promise, statement or endorsement in respect of any other product of services which may be
+                        provided by Sourcing Partner and will not be responsible
+                        or liable in any manner whatsoever for the same.
+                        <br><br>
+                        <b>7. </b> I/we understand that the I/we have an option of not providing the information as
+                        required in this application form or as may be required by DMI from time to time provided
+                        that
+                        on exercising such option DMI shall have
+                        the right to cancel the sanction or seek prepayment of the amounts due as per the terms of
+                        the
+                        GC.
+                        <br><br>
+                        <b>8. </b> I/ We declare that I/ We have not made any payment in cash, bearers cheques or by
+                        any
+                        other mode along with or in connection with this Application Form to the person collecting
+                        my/our Application Form. I/ We shall not
+                        hold DMI or its employees/representatives/agents/service providers liable for any such
+                        payment
+                        made by us to the person collecting this Application Form.
+                        <br><br>
+                        <b>9. </b> <b>I/We confirm that I/We have understood the terms of the application form.</b>
+                    </p>
+                </div> -->
+            </div>
+        </div>
+        <div class="loan_application_wrapper">
+            <div class="loan_application_form">
+                <div class="loan_application_heading">
+                    <h3 class="loan-detail-sheet-heading">Loan Application Form</h3>
+                    <h4 class="loan_details_h4">Customer Personal Information</h4>
+                </div>
+                <div class="loan_application_right_left_wrapper">
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Transaction ID</span>
+                        <span class="label_right">{{userDetails.Transaction_ID?userDetails.Transaction_ID:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Full Name</span>
+                        <span class="label_right">{{userDetails.First_Name?userDetails.First_Name:'-'}} {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Date of Birth (dd-mm-yyyy)</span>
+                        <span class="label_right">{{userDetails.Date_of_Birth?userDetails.Date_of_Birth:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Gender</span>
+                        <span class="label_right">{{userDetails.Gender?userDetails.Gender:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Marital Status</span>
+                        <span class="label_right">{{userDetails.Marital_Status?userDetails.Marital_Status:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Date (dd-mm-yyyy)</span>
+                        <span class="label_right">{{userDetails.Date?userDetails.Date:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Mobile Number</span>
+                        <span class="label_right">{{userDetails.Mobile_Number?userDetails.Mobile_Number:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Personal E-mail</span>
+                        <span class="label_right">{{userDetails.Personal_Email?userDetails.Personal_Email:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Landline Number</span>
+                        <span class="label_right">{{userDetails.Landline_Number?userDetails.Landline_Number:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">PAN</span>
+                        <span class="label_right">{{userDetails.PAN?userDetails.PAN:'-'}}</span>
+                    </p>
+                </div>
+            </div>
+            <hr class="blue_horizontal">
+            <div class="home_information">
+                <div class="loan_application_heading">
+                    <h4 class="loan_details_h4">HOME INFORMATION</h4>
+                </div>
+                <div class="loan_application_right_left_wrapper">
+                    <div class="loan_application_form_left">
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Building Name & Apt #</span>
+                            <span class="label_right">{{userDetails.Mailing_Address?userDetails.Mailing_Address:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Street Name</span>
+                            <span class="label_right">{{userDetails.Mailing_Street?userDetails.Mailing_Street:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Pincode</span>
+                            <span class="label_right">{{userDetails.Mailing_Postalcode?userDetails.Mailing_Postalcode:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">City & State</span>
+                            <span class="label_right">{{userDetails.Mailing_City?userDetails.Mailing_City:'-'}}, {{userDetails.Mailing_State?userDetails.Mailing_State:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Residence is</span>
+                            <span class="label_right">{{userDetails.Residence_Is?userDetails.Residence_Is:'-'}}</span>
+                        </p>
+                    </div>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Area</span>
+                        <span class="label_right">{{userDetails.Mailing_City?userDetails.Mailing_City:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Duration at Current Residence</span>
+                        <span class="label_right">{{userDetails.Duration_at_Current_Residence?userDetails.Duration_at_Current_Residence:'-'}}</span>
+                    </p>
+                    <p class="label_left_right_wrapper">
+                        <span class="label_left">Duration in the City</span>
+                        <span class="label_right">{{userDetails.Duration_in_the_City?userDetails.Duration_in_the_City:'-'}}</span>
+                    </p>
+                </div>
+            </div>
+            <hr class="blue_horizontal">
+            <div class="home_information">
+                <div class="loan_application_heading">
+                    <h4 class="loan_details_h4">WORK INFORMATION</h4>
+                </div>
+                <div class="loan_application_right_left_wrapper">
+                    <div class="loan_application_form_left">
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Type of Employment </span>
+                            <span class="label_right">{{userDetails.Type_of_Employment?userDetails.Type_of_Employment:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Start Month/Year @ Current Job</span>
+                            <span class="label_right">{{userDetails.Start_Month_Year_Job?userDetails.Start_Month_Year_Job:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Work Email Verified</span>
+                            <span class="label_right">{{userDetails.Work_Email_Verified?userDetails.Work_Email_Verified:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Company Name</span>
+                            <span class="label_right">{{userDetails.Company_Name?userDetails.Company_Name:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Work Email</span>
+                            <span class="label_right">{{userDetails.Work_Email?userDetails.Work_Email:'-'}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="blue_horizontal">
+            <div class="home_information">
+                <div class="loan_application_heading">
+                    <h4 class="loan_details_h4">SOURCING PARTNER</h4>
+                </div>
+                <div class="loan_application_right_left_wrapper">
+                    <div class="loan_application_form_left">
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Name</span>
+                            <span class="label_right">{{userDetails.Sourcing_Partner_Name?userDetails.Sourcing_Partner_Name:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Address</span>
+                            <span class="label_right">{{userDetails.Sourcing_Partner_Address?userDetails.Sourcing_Partner_Address:'-'}}</span>
+                        </p>
+                        <p class="label_left_right_wrapper">
+                            <span class="label_left">Phone</span>
+                            <span class="label_right">{{userDetails.Sourcing_Partner_Phone?userDetails.Sourcing_Partner_Phone:'-'}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="loan-detail-sheet">
+                <p>Loan Agreement</p>
+                <div class="sub-section">
+                    <div class="sub-section-1">
+                        <h5>General Terms And Conditions Of Loan</h5>
+                    </div>
+                    <div class="sub-section-1" style="text-align: justify;">
+                        <label>GENERAL TERMS AND CONDITIONS OF LOAN <b>(“GC”)</b> for loans by <b>DMI Finance Private
+                                Limited</b> having its registered office at Express Building, Third Floor, 9-10, Bahadur
+                            Shah Zafar Marg, New Delhi – 110002 (<b>‘DMI’</b> which shall mean and include its
+                            successors
+                            and assigns)
+                        </label>
+                    </div>
+                    <div class="sub-section-1">
+                        <app-loan-agreement [agreementDetails]='assignmnet'></app-loan-agreement>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- *ngIf="partnerName != 'Chat-X-Sell'" -->
+            <!-- -------------------Device-Information-----------------         -->
+
+            <!-- <div class="loan-detail-sheet">
+                <p>Device Information</p>
+                <div class="sub-section">
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Signed By</h5><label>{{userDetails.First_Name?userDetails.First_Name:'-'}}
+                            {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Reason</h5><label>{{userDetails.Reason?userDetails.Reason:'-'}}</label>
+                    </div>
+
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Signed on</h5>
+                        <label>{{userDetails.Login_Time_Stamp?userDetails.Login_Time_Stamp:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Remark</h5><label>{{userDetails.Remark?userDetails.Remark:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Mobile</h5><label>{{userDetails.Mobile_Number?userDetails.Mobile_Number:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>IP Address</h5>
+                        <label>{{userDetails.Device_IP_Address?userDetails.Device_IP_Address:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Browser</h5>
+                        <label>{{userDetails.Device_Browser?userDetails.Device_Browser:deviceInfo.browser}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Location</h5><label>{{userDetails.Device_Location?userDetails.Device_Location:'-'}}</label>
+                    </div>
+                    <div class="sub-section-1 loan-detail">
+                        <h5>Device Type</h5>
+                        <label>{{userDetails.Device_Type?userDetails.Device_Type:getDeviceType()}}</label>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- <mat-card>
+        <div class="submit">
+            <mat-checkbox (change)='onChange($event)'>I Accept</mat-checkbox>
+            <button [ngClass]="{'disabledBtn':!enableBtn}" [disabled]="!enableBtn" (click)="submit()">Submit</button>
+        </div>
+    </mat-card> -->
+        </div>
+        <div class="undertaking">
+            <h4 class="loan_details_h4">UNDERTAKING</h4>
+            <ul>
+                <li>I/We hereby apply for a finance facility for the short term personal loan (“Facility”) mentioned in this application. I/We declare that all the particulars and information and details given/filled in this Application Form are true, correct,
+                    complete and up-to date in all respects and no information has been withheld. I/We understand that the information given in this application shall form the basis of any loan that DMI Finance Private Limited (“DMI”) may decide to grant
+                    to me/us and if at any stage of processing this application, it comes to the knowledge of DMI that, I/we have provided any incorrect or incomplete information, fabricated documents, or fake documents, they will be treated by DMI as
+                    having been manipulated by me/us and DMI shall have the right to forthwith reject this loan application, cancel / revoke any sanction or further drawdowns or recall any loan granted at any stage of processing the application, without
+                    assigning any reason whatsoever and DMI and its employees/ representatives/ agents / service providers shall not be responsible/liable in any manner whatsoever to me/us for such rejection or any delay in notifying me/us of such rejection
+                    (including for any payments which may have been made by me to any vendor/ service provider prior to cancellation).
+                </li>
+                <li>
+                    I/We understand that DMI will also be procuring personal information from other sources/agents and I/We have no objection for the same. I/We authorize DMI to make reference and inquire relating to information in this application which DMI considers necessary,
+                    including from the banks where I/we hold bank accounts.
+                </li>
+                <li>
+                    I/We hereby give my/our consent voluntarily for use of AADHAAR card/details for the purposes of availing the Facility including KYC purposes as required under applicable laws and as per DMI policies. I/We hereby give our consent to DMI to procure my /our
+                    AADHAAR details, PAN No/copy of my/our PAN Card, other identity proof and Bank Account details from time to time, exchange, part with/share all information relating to my/our loan details and repayment history with other banks/financial
+                    institutions /CIBIL etc. and periodically obtain / generate CIBIL, Experian, Hunter and such other reports as may be required and shall not hold DMI liable for use of this information. I/We do hereby expressly and irrevocably authorize
+                    DMI to collect, store, share, obtain and authenticate any aspect of my/our personal information either directly or through any of the authorized agencies and disclose such information to its agents/contractors/service providers and
+                    to also use such information for the purposes of KYC authentication, grant of the Facility and for internal evaluation by DMI of its business. For more details please click here.
+                </li>
+                <li>
+                    I/We hereby give my/our consent voluntarily for use of PAN or Aadhar card/details for the purposes of fetching CKYC from CERSAI for the purposes as required under applicable laws and as per DMI policies. I/We hereby give our consent to DMI to procure
+                    my AADHAAR details, PAN No/copy of my/our PAN Card, other identity proof and Bank Account details from time to time for use as per policy and shall not hold DMI liable for use of this information. I/We do hereby expressly and irrevocably
+                    authorize DMI to collect, store, share, obtain and authenticate any aspect of my/our personal information directly from CERSAI and disclose such information to its agents/contractors/service providers and to also use such information
+                    for the purposes of KYC authentication, grant of the Facility and for internal evaluation by DMI of its business
+                </li>
+                <li>
+                    I/We, would like to know through telephonic calls, or SMS/WhatsApp on my mobile number mentioned in the Application Form as well as in this undertaking, or through any other communication mode, transactional information, various loan offer schemes or
+                    loan promotional schemes or any other promotional schemes which may be provided by DMI and hereby authorize DMI and their employee, agent, associate to do so. I confirm that laws in relation to the unsolicited communication referred
+                    in “National Do Not Call Registry” (the “NDNC Registry”) as laid down by TELECOM REGULATORY AUTHORITY OF INDIA will not be applicable for such communication/calls/SMSs/WhatsApp messages received from DMI, its employees, agents and/or
+                    associates.
+                </li>
+                <li>
+                    I/We acknowledge that Sourcing Partner and DMI are independent of each other and I/we will not have any claim against DMI for any loan or other facility arranged/ provided by Sourcing Partner which is not sanctioned/ disbursed by DMI. I acknowledge that
+                    DMI does not in any manner make any representation, promise, statement or endorsement in respect of any other product of services which may be provided by Sourcing Partner and will not be responsible or liable in any manner whatsoever
+                    for the same.
+                </li>
+                <li>
+                    I/we understand that the I/we have an option of not providing the information as required in this application form or as may be required by DMI from time to time provided that on exercising such option DMI shall have the right to cancel the sanction or
+                    seek prepayment of the amounts due as per the terms of the GC.
+                </li>
+                <li>
+                    I/ We declare that I/ We have not made any payment in cash, bearers cheques or by any other mode along with or in connection with this Application Form to the person collecting my/our Application Form. I/ We shall not hold DMI or its employees/representatives/agents/service
+                    providers liable for any such payment made by us to the person collecting this Application Form.
+                </li>
+                <li><b>I/We confirm that I/We have understood the terms of the application form</b></li>
+            </ul>
+        </div>
+        <div class="loan_application_form_left">
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Phone Number</span>
+                <span class="label_right">{{userDetails.Mobile_Number?userDetails.Mobile_Number:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">DNC</span>
+                <span class="label_right">{{userDetails.LAF_DNC?userDetails.LAF_DNC:'-'}}</span>
+            </p>
+        </div>
+        <hr class="blue_horizontal">
+        <div class="acknowledgement">
+            <h4 class="loan_details_h4">ACKNOWLEDGMENT</h4>
+            <p>I/We acknowledge the receipt of your application for a loan from DMI Finance. Please furnish documents mentioned for approval of your loan application.</p>
+            <div class="loan_application_form_left">
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Applicant’s Name:</span>
+                    <span class="label_right">{{userDetails.First_Name?userDetails.First_Name:'-'}} {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</span>
+                </p>
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Loan Amount:</span>
+                    <span class="label_right">{{userDetails.Loan_Amount?(userDetails.Loan_Amount|customCurrency):'-'}}</span>
+                </p>
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Processing Fee:</span>
+                    <span class="label_right">{{userDetails.Processing_Fee?(userDetails.Processing_Fee|customCurrency):'-'}}</span>
+                </p>
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Bounce Charges:</span>
+                    <span class="label_right">{{userDetails.Bounce_Charge?userDetails.Bounce_Charge:'-'}}</span>
+                </p>
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Penal Charges</span>
+                    <span class="label_right">{{userDetails.Penal_Charges?userDetails.Penal_Charges:'-'}}</span>
+                </p>
+                <p class="label_left_right_wrapper">
+                    <span class="label_left">Interest Per Month:</span>
+                    <span class="label_right">{{userDetails.Loan_Rate?userDetails.Loan_Rate:'-'}}</span>
+                </p>
+            </div>
+        </div>
+        <hr class="blue_horizontal">
+        <div class="loan_agreement">
+            <h4 class="loan_details_h4">LOAN AGREEMENT</h4>
+            <h3 class="loan_details_h3" style="text-align: center;">GENERAL TERMS AND CONDITIONS OF LOAN</h3>
+            <p>GENERAL TERMS AND CONDITIONS OF LOAN (“GC”) for loans by DMI Finance Private Limited having its registered office at Express Building, Third Floor, 9-10, Bahadur Shah Zafar Marg, New Delhi – 110002 (‘DMI’ which shall mean and include its successors
+                and assigns).
+            </p>
+            <h3 class="loan_details_h3">1. DEFINITIONS</h3>
+            <p>1.1 The terms and expressions contained in these GC and the Loan Application Form are defined as under:
+            </p>
+            <p>“Availability Period” shall mean the period within which the Borrower can request a Drawdown from the Facility and is as detailed in the Loan Details Sheet;
+            </p>
+            <p>“Available Facility Amount” means at any point of time the undrawn amount of the Facility, including any amount of the Facility which becomes available pursuant to any repayment or prepayment of all or part of any previous Drawdown;
+            </p>
+            <p>“Borrower” means the borrower as described in the Loan Details Sheet;</p>
+            <p>“Borrower’s Dues” means all sums payable by the Borrower to DMI, including outstanding Facility, Interest, all other charges, costs and expenses;</p>
+            <p>“Drawdown” shall mean each drawdown of the Facility within the Availability Period and as per the terms of the Financing Documents, including drawdown of any amount which becomes available against the Facility, pursuant to prepayment/ repayment
+                of any earlier Drawdown;</p>
+            <p>
+                “Due Date” in respect of any payment means the date on which any amount is due from the Borrower to DMI
+            </p>
+            <p>
+                “EMI” means the equated monthly amount to be paid by the Borrower towards repayment of all outstanding Drawdowns and payment of interest (if applicable) as per Financing Documents;
+            </p>
+            <p>
+                “Facility” means the maximum drawdown limit granted by DMI to the Borrower as per Loan Details Sheet, which may be available to the Borrower as a revolving credit;
+            </p>
+            <p>
+                “Financing Documents” means these GC, the Loan Application, the Loan Details Sheet, including the annexures hereto and any documents executed by the Borrower or as required by DMI, as amended from time to time;
+            </p>
+            <p>
+                “Loan Application” means the application in the prescribed form as submitted from time to time by the Borrower to DMI for seeking financing;
+            </p>
+            <p>
+                “Loan Details Sheet” means the Loan Details Sheet executed between DMI and Borrower, from time to time;
+            </p>
+            <p>
+                “Material Adverse Effect” means any event which in DMI’s opinion would have an adverse effect on (i) Borrower’s ability to pay the Borrower’s Dues or (ii) recoverability of the Borrower’s Dues;
+            </p>
+            <p>
+                “Overdue Interest Rate” means the default interest as prescribed in the Loan Details Sheet which is payable on all amounts which are not paid on their respective Due Dates;
+            </p>
+            <p>
+                “Purpose” means the utilization of each Drawdown as mentioned in the Loan Details Sheet including for purchase of any product from Vendors;
+            </p>
+            <p>
+                “Product” shall mean, if applicable, a product purchased by the Borrower from any Vendor and in line with the Purpose provided in the Loan Details Sheet;
+
+            </p>
+            <p>
+                “Vendor” shall mean the vendors, including e-commerce website as approved by DMI from time to time in respect of which financing would be provided by DMI for purchase of any Products.
+
+            </p>
+            <p>
+                1.1A. In this GC, (a) the singular includes the plural (and vice versa) and (b) reference to a gender shall include references to the female, male and neutral genders.
+            </p>
+            <h3 class="loan_details_h3">2. DISBURSEMENT</h3>
+            <p>2.1 The Borrower may at any time during the Availability Period, request disbursement of any amount to the extent of the Available Facility Amount. DMI shall have the sole and absolute discretion to allow or reject Drawdown against such request.
+                The Facility may be in the nature of a revolving credit and the Available Facility Amount may change during the Availability Period on account of prepayments/repayment. Notwithstanding anything contained in this GC, DMI shall have the
+                absolute right to cancel or refuse any further Drawdowns from the Facility at its sole discretion as it may deem fit, including on account of any change in credit evaluation of the Borrower</p>
+            <p>
+                2.2 Disbursement of any Drawdown directly to any vendor / seller/ healthcare institution or its authorized person for any Purpose shall be treated as having been disbursed to the Borrower.
+            </p>
+            <p>
+                2.3 The Borrower shall pay non-refundable processing charges as stated in the Loan Details Sheet, along with tax thereof, which may be added as a deemed disbursement to the first Drawdown and the Borrower will accordingly be liable for entire Drawdown.
+            </p>
+            <h3 class="loan_details_h3">3. INTEREST AND REPAYMENT</h3>
+            <p>3.1 The Borrower will pay Interest (if applicable) on each Drawdown made by the Borrower of the Facility and all other amounts due as provided in Loan Details Sheet and the interest shall be compounded on a monthly basis. The Borrower will
+                be liable for the entire Drawdown amount and shall pay the full amount for each Drawdown. However, in such cases, in the event the installment is not paid on the Due Date, all overdue amounts shall accrue Interest at the prescribed rate
+                (“Overdue Interest Rate”) which shall be computed from the respective due dates for payments and the interest shall be compounded on a monthly basis.
+            </p>
+            <p>
+                3.2 The Borrower acknowledges that in case of identified Purpose, Drawdown may be allowed on zero interest basis and in such cases the return shall be made available to DMI by way of one-time non-refundable upfront discount provided by vendors/healthcare
+                institutions on selected Purposes as mutually agreed between DMI and vendor / its authorized representative.
+            </p>
+            <p>3.3 The tenure of each Drawdown shall be as provided in the Loan Details Sheet. EMI shall be as calculated by DMI as required for amortization of Drawdowns within their respective tenure and Interest payable thereon and not exceeding the maximum
+                EMI as provided in the Loan Details Sheet. EMI shall only be towards principal outstanding and Interest thereon and does not include any default interest or any other charges payable by the Borrower pursuant to Financing Documents.</p>
+            <p>3.4 The payment of each EMI on time is the essence of the contract. The Borrower acknowledges that s/he has understood the method of computation of EMI and shall not dispute the same.</p>
+            <p>3.5 Notwithstanding anything stated elsewhere in the Financing Documents, all Borrower’s Dues, including EMI, shall be payable by the Borrower to DMI as and when demanded by DMI, at its sole discretion and without requirement of any reason
+                being assigned. The Borrower shall pay such amounts, without any delay or demur, within 15 (fifteen) days of such demand.</p>
+            <p>3.6 DMI shall be entitled to prospectively revise the rate of interest / any other charges, and DMI may recompute the EMI /the number of EMI for repayment of outstanding Facility and interest. Any such change as intimated by DMI to Borrower,
+                shall be applicable prospectively (if so required under any applicable law) and will be final and binding on the Borrower. In case of such revision the Borrower shall be entitled to prepay, within 30 (thirty) days of such revision, the
+                entire outstanding Facility along with accrued Interest (if applicable), without any prepayment penalty.</p>
+            <p><b>3.7 In case of delayed payments, without prejudice to all other rights of DMI, DMI shall be entitled
+                    to Overdue Interest Rate
+                    (as prescribed in Loan Details Sheet) from the Borrower for the period of delay.</b></p>
+            <p><b>3.8 The Borrower may pre-pay any Drawdown prior to its scheduled tenure only with the prior approval
+                    of DMI and subject
+                    to such conditions and prepayment charges, as stipulated by DMI.</b></p>
+            <p>3.9 The Borrower shall bear all interest, tax, duties, cess duties and other forms of taxes whether applicable now or in the future, payable under any law at any time in respect of any payments made to DMI under the Financing Documents. If
+                these are incurred by DMI, these shall be recoverable from the Borrower and will carry interest at the rate of Overdue Interest Rate from the date of payment till reimbursement.
+            </p>
+            <p>3.10 Notwithstanding any terms and conditions to the contrary contained in the Financing Documents, the amounts repaid by the Borrower shall be appropriated firstly towards cost, charges, expenses and other monies; secondly towards Overdue
+                Interest Rate, if any; thirdly towards Interest; and lastly towards repayment of principal amount of a Facility.</p>
+            <p>3.11 Interest (if applicable), Overdue Interest Rate and all other charges shall accrue from day to day and shall be computed on the basis of 365 days a year and the actual number of days elapsed.</p>
+            <p>3.12 If the due date for any payment is not a business day, the amount will be paid by Borrower on immediately succeeding business day.</p>
+            <p>3.13 All sums payable by the Borrower to DMI shall be paid without any deductions whatsoever. Credit/ discharge for payment will be given only on realization of amounts due.</p>
+            <h3 class="loan_details_h3">4. MODE OF PAYMENT, REPAYMENT AND PREPAYMENT</h3>
+            <p>4.1 The Borrower shall, as required by DMI from time to time, provide (i) (“EMANDATEs”) or (ii) National Automated Clearing House (Debit Clearing)/ any other electronic or other clearing mandate (collectively referred to as “NACH”) as notified
+                by the Reserve Bank of India (“RBI”) against Borrower’s bank account for payment of dues. Such EMANDATEs/NACH shall be drawn from such bank and from such location as agreed to by DMI. The Borrower shall honor all payments without fail
+                on first presentation/ due dates. EMANDATE/ NACH provided by the Borrower may be utilized by DMI for realization of any Borrower’s Dues. The Borrower hereby unconditionally and irrevocably authorizes DMI to take all actions required for
+                such realization. The Borrower shall promptly (and in any event within seven (7) days) replace the EMANDATE and/or the NACH and/or other documents executed for payment of Borrower’s Dues as may be required by DMI from time to time, at
+                its sole discretion</p>
+            <p>4.2 The Borrower shall, at all times maintain sufficient funds in his/her bank account/s for due payment of the Borrower’s Dues on respective Due Dates. Borrower shall not close the bank account/s from which the EMANDATE / NACH have been issued
+                or cancel or issues instructions to the bank or to DMI to stop or delay payment under the EMANDATE / NACH and DMI is not bound to take notice of any such communication.</p>
+            <p>4.3 The Borrower agrees and acknowledges that the EMANDATE/ NACH have been issued voluntarily in discharge of the Borrower’s Dues and not by way of a security for any purpose whatsoever. The Borrower also acknowledges that dishonor of any
+                EMANDATE/ NACH is a criminal offence under the Negotiable Instruments Act, 1881/The Payment and Settlements Act, 2007. The Borrower shall be liable to pay dishonour charges for each EMANDATE/ NACH dishonour (as prescribed in Loan Details
+                Sheet).
+            </p>
+            <p>4.4 Any dispute or difference of any nature whatsoever shall not entitle the Borrower to withhold or delay payment of any EMIs or other sum and DMI shall be entitled to present the EMANDATE/ NACH on the respective due dates.</p>
+            <p>4.5 Notwithstanding the issuance of EMANDATE / NACH, the Borrower will be solely responsible to ensure timely payment of dues.
+            </p>
+            <p>4.6 The Borrower agrees and acknowledges that in the event of payment of dues through modes other than eMandate / NACH, there can be additional charges for transactions and the same shall be borne by the Borrower.</p>
+            <h3 class="loan_details_h3">5. BORROWER’S COVENANTS, REPRESENTATION AND WARRANTIES</h3>
+            <p>5.1 The Borrower shall:</p>
+            <p>(i) Observe and perform all its obligations under the Financing Documents.</p>
+            <p>(ii) Immediately deliver to DMI all documents, including bank account statements as may be required by DMI from time to time. The Borrower also authorizes DMI to communicate independently with (i) any bank where the Borrower maintains an account
+                and to seek details and statement in respect of such account from the bank and (ii) with any employer of any Borrower as DMI may deem necessary, including for monitoring Borrower’s creditworthiness.</p>
+            <p>(iii) Immediately notify DMI of any litigations or legal proceedings against any Borrower.</p>
+            <p>(iv) Notify DMI of any Material Adverse Effect or Event of Default.</p>
+            <p>(v) Notify DMI in writing of all changes in the location/ address of office /residence /place of business or any change/resignation/termination / closure of employment/ profession /business.</p>
+            <p>(vi) Not leave India for employment or business or long term stay abroad without fully repaying the Facility then outstanding, together with interest and other dues and charges.
+            </p>
+            <p>(vii) Provide security, if any, as specified in Financing Documents or as may be required by DMI in case of any change in credit worthiness of any Borrower (as determined by DMI).</p>
+            <p>(viii) Ensure deposit of salary and / or business proceeds in the account from which PDCs/ECS have been issued to DMI.</p>
+            <p>(ix) On or prior to the first Drawdown take a credit life insurance policy as required by DMI which shall include a cover for accidents, death, permanent disability and unemployment and such other terms as shall be acceptable to DMI.</p>
+            <p>(x) Comply at all times with applicable laws, including, Prevention of Money Laundering Act, 2002.</p>
+            <p>(xi) Utilise each Drawdown only for the Purpose.</p>
+            <p>(xii) The Borrower hereby creates a charge on the Product in favour of the Lender</p>
+            <p><b>5.2 Each Borrower represents and warrants to DMI as under:
+                </b>
+            </p>
+            <p>(i) All the information provided by Borrower in the Loan Application and any other document, whether or not relevant for ascertaining the credit worthiness of the Borrower, is true and correct and not misleading in any manner;
+            </p>
+            <p>(ii) The Borrower is capable of and entitled under all applicable laws to execute and perform the Financing Documents and the transactions thereunder;</p>
+            <p>(iii) The Borrower is above 18 years of age and this GC is a legal, valid and binding obligation on him/her, enforceable against him/her in accordance with its terms;</p>
+            <p>(iv) The Borrower declares that he/ she is not prohibited by any law from availing this Facility;
+            </p>
+            <p>(v) No event has occurred which shall prejudicially affect the interest of DMI or affect the financial conditions of Borrower or affect his/her liability to perform all or any of their obligations under the Financing Documents;
+            </p>
+            <p>(vi) Borrower is not in default of payment of any taxes or government dues;</p>
+            <p>(vii) The Borrower will do all acts, deeds and things, as required by DMI to give effect to the terms of this GC;</p>
+            <p>(viii) That there are no bankruptcy or insolvency proceedings against the Borrower.
+            </p>
+            <p>5.3 The Borrower gives its consent to DMI to use/store all the information provided by the Borrower or otherwise procured by DMI in the manner it deems fit including for the purposes of this Facility or for its business and understands and
+                agrees that DMI may disclose such information to its contractors, agents and any other third parties.</p>
+            <p>5.4 In the event the Facility/Drawdown is for purchase of any Product, the Borrower also undertakes and covenants as below:</p>
+            <p>(i) Borrower shall not be entitled to any increase in the Facility amount by reason of any increase in the purchase price of any Product. However, in the event of any decrease in the purchase price, DMI may in its discretion reduce the principal
+                amount of the sanctioned Facility;</p>
+            <p>(ii) The Vendor shall be exclusively responsible for delivery of the Product and DMI shall not be liable for any delay in delivery or non-delivery of the Product and/or with respect to the quality, condition, fitness, suitability or otherwise
+                whatsoever of the said Product;
+            </p>
+            <p>(iii) In the case Product cancellation, DMI will treat the relevant Facility repaid only if the Vendor refunds the amount to DMI upon compliance by the Borrower with the refund policy of the Vendor. In case of such refund, DMI shall refund
+                the EMI, if any, paid by the Borrower, less Interest if any for the period between purchase and refund, and treat the Facility/Drawdown as fully discharged. The processing fees will not be reimbursed and will be adjusted against the refund,
+                if any;</p>
+            <p>(iv) The Borrower shall not claim part possession or ownership of the Product or create any third party rights thereon without consent of DMI;</p>
+            <p>(v) DMI shall have first and exclusive charge on the Product.</p>
+            <h3 class="loan_details_h3">6. EVENTS OF DEFAULT</h3>
+            <p>6.1 The following acts/events, shall each constitute an “Event of Default” by the Borrower for the purposes of each Facility:
+            </p>
+            <p>(i) The Borrower fails to make payment of any Borrower’s Dues on Due Date;</p>
+            <p>(ii) Breach of any terms, covenants, representation, warranty, declaration or confirmation under the Financing Documents;
+            </p>
+            <p>(iii) Any fraud or misrepresentation or concealment of material information by Borrower which could have affected decision of DMI to grant any Facility;
+            </p>
+            <p>(iv) Death, lunacy or any other permanent disability of the Borrower;</p>
+            <p>(v) Borrower utilises the Drawdown for any purpose other than the Purpose;</p>
+            <p>(vi) Occurrence of any events, conditions or circumstances (including any change in law) which in the sole and absolute opinion of DMI could have a Material Adverse Effect, including limitation of any proceedings or action for bankruptcy/liquidation/
+                insolvency of the Borrower or attachment / restraint of any of its assets;</p>
+            <p>6.2 The decision of DMI as to whether or not an Event of Default has occurred shall be binding upon the Borrower.
+            </p>
+            <h3 class="loan_details_h3">7. CONSEQUENCES OF DEFAULT</h3>
+            <p>7.1 Upon occurrence of any of the Events of Default and at any time thereafter, DMI shall have the right, but not the obligation to declare all sums outstanding in respect of the Facility, whether due or not, immediately repayable and upon
+                the Borrower failing to make the said payments within 15 (fifteen) days thereof, DMI may at its sole discretion exercise any other right or remedy which may be available to DMI under any applicable law, including seeking any injunctive
+                relief or attachment against the Borrower or their assets. Notwithstanding the aforesaid, in the event of the Borrower failing to make the payment of the Borrower’s Dues within 90 (ninety) days from the Due Date of such payment, DMI shall,
+                inter alia, have the right to classify the same as a non-performing asset (NPA) and report it accordingly to the credit bureaus.
+            </p>
+            <p>7.2 The Lender shall also have the unconditional right to immediately take possession of the Product.</p>
+            <p>7.3 The Borrower shall also be liable for payment of all legal and other costs and expenses resulting from the foregoing defaults or the exercise of DMI remedies.
+            </p>
+            <h3 class="loan_details_h3">8. DISCLOSURES</h3>
+            <p>8.1 The Borrower acknowledges and authorizes DMI to disclose all information and data relating to Borrower, the Facility, Drawdowns, default if any, committed by Borrower to such third parties/ agencies as DMI may deem appropriate and necessary
+                to disclose and/or as authorized by RBI, including TransUnion CIBIL Limited (“CIBIL”). The Borrower also acknowledges and authorizes such information to be used, processed by DMI / third parties/ CIBIL / RBI as they may deem fit and in
+                accordance with applicable laws. Further in Event of Default, DMI and such agencies shall have an unqualified right to disclose or publish the name of the Borrower /or its directors/ partners/co-applicants, as applicable, as ‘defaulters’
+                in such manner and through such medium as DMI / CIBIL/ RBI/ other authorized agency in their absolute discretion may think fit, including in newspapers, magazines and social media.
+            </p>
+            <p>8.2 The Borrower shall not hold DMI responsible for sharing and/or disclosing the information now or in future and also for any consequences suffered by the Borrower and/or other by reason thereof. The provisions of this clause 8 shall survive
+                termination of the GC and the repayment of the Borrower’s Dues.
+            </p>
+            <h3 class="loan_details_h3">9. MISCELLANEOUS</h3>
+            <p>9.1 The entries made in records of DMI shall be conclusive evidence of existence and of the amount Borrower’s Dues and any statement of dues furnished by DMI shall be accepted by and be binding on the Borrower.</p>
+            <p>9.2 Borrower’s liability for repayment of the Borrower’s Dues shall, in case where more than one Borrower have jointly applied for any Facility, be joint and several.</p>
+            <p>9.3 Borrower shall execute all documents and amendments and shall co-operate with DMI as required by DMI (i) to comply with any RBI guidelines / directives or (ii) for giving DMI full benefit of rights under the Financing Documents. Without
+                prejudice to the aforesaid the Borrower hereby irrevocably consents that on its failure to do so, such changes shall be deemed to be incorporated in the Financing Documents and shall be binding on the Borrower.</p>
+            <p>9.4 Notwithstanding any suspension or termination of any Facility, all right and remedies of DMI as per Financing Documents shall continue to survive until the receipt by DMI of the Borrower’s Dues in full.</p>
+            <p>9.5 The Borrower acknowledges that the rate of interest, penal charges, service charges and other charges payable and or agreed to be paid by the Borrower under Financing Documents are reasonable and acceptable to him/ her.</p>
+            <p>9.6 The Borrower expressly recognizes and accepts that DMI shall without prejudice to its rights to perform such activities itself or through its office employees be entitled and has full power and authority so to appoint one or more third
+                parties (hereinafter referred to as “Service Providers”) as DMI may select and to delegate to such party all or any of its functions, rights and power under Financing Documents relating to the sourcing, identity and verification of information
+                pertaining to the Borrower, administration, monitoring of the Facility and to perform and execute all lawful acts, deeds, matters and things connected therewith and incidental thereto including sending notices, contacting Borrower, receiving
+                Cash/Cheques/Drafts/ Mandates from the Borrower in favour of DMI.</p>
+            <p>9.7 The Borrower acknowledges that the financing transaction hereunder gives rise to a relationship of debtor and creditor as between him / her and DMI and not in respect of any service rendered/to be rendered by DMI. Accordingly, the provisions
+                of the Consumer Protection Act, 1986 shall not apply to the transaction hereunder.</p>
+            <p>9.8 The Borrower hereby authorizes DMI to verify all information and documents including, income proof documents, residence documents, address proof documents, identity documents and other such documents containing personal and financial information
+                as are submitted by them for obtaining any Facility and that they also consent to subsequent retention of the same by DMI.</p>
+            <p>9.9 The Borrower acknowledges and authorizes DMI to procure Borrower’s PAN No./copy of Pan Card, other identity proof and Bank Account details, from time to time and to also generate / obtain CIBIL, Experian, Hunter reports and such other
+                reports as and when DMI may deem fit. The Borrower also hereby gives consent and authorizes DMI to undertake its KYC verification by Aadhar eKYC or otherwise and undertake all such actions as may be required on its behalf or otherwise
+                to duly complete the process of such verification including by way of Aadhar e-KYC and share such information with any authority and store such information in a manner it deems fit.</p>
+            <p>9.10 In the event of any disagreement or dispute between DMI and the Borrower regarding the materiality of any matter including of any event occurrence, circumstance, change, fact information, document, authorization, proceeding, act, omission,
+                claims, breach, default or otherwise, the opinion of DMI as to the materiality of any of the foregoing shall be final and binding on the Borrower.
+            </p>
+            <p>9.11 The Borrower and DMI may mutually agree on grant of a fresh facility on the terms and conditions of the GC and by execution of such further letter/undertaking by the Borrower as may be required by DMI.
+            </p>
+            <h3 class="loan_details_h3">10. SEVERABILITY</h3>
+            <p>The Borrower acknowledges that each of his/her obligations under these Financing Documents is independent and severable from the rest.</p>
+            <h3 class="loan_details_h3">11. GOVERNING LAW AND JURISDICTION
+            </h3>
+            <p>11.1 All Facility and the Financing Documents shall be governed by and construed in accordance with the laws of India.</p>
+            <p>11.2 All disputes, differences and / or claims arising out of these presents or as to the construction, meaning or effect hereof or as to the right and liabilities of the parties under the Financing Documents shall be settled by arbitration
+                in accordance with the provision of the Arbitration and Conciliation Act, 1996 or any statutory amendments thereof or any statute enacted for replacement therefore and shall be referred to the sole Arbitration of a person to be appointed
+                by DMI. The place of arbitration shall be Delhi and proceeding shall be under fast track procedure as laid down in Section 29(B) of the Act. The awards including interim awards of the arbitration shall be final and binding on all parties
+                concerned. The arbitrator may pass the award without stating any reasons in such award.</p>
+            <p>11.3 Further, the present clause shall survive the termination of Financing Documents. The Courts at Delhi, India shall have exclusive jurisdiction (subject to the arbitration proceedings which are to be also conducted in Delhi, India) over
+                any or all disputes arising out of the Financing Documents.
+            </p>
+            <h3 class="loan_details_h3">12. NOTICES</h3>
+            <p>12.1 Any notice to be given to the Borrower in respect of Financing Documents shall be deemed to have been validly given if served on the Borrower or sent by registered post to or left at the address of the Borrower existing or last known
+                business or private address. Any such notice sent by registered post shall be deemed to have been received by the Borrower within 48 hours from the time of its posting. Any notice to DMI shall be deemed to have been valid only if received
+                by DMI at its abovestated address.</p>
+            <h3 class="loan_details_h3">13. ASSIGNMENT</h3>
+            <p>13.1 The Borrower shall not be entitled to jointly or severally transfer or assign all or any of their right or obligation or duties under the Financing Documents to any person directly or indirectly or create any third party interest in favour
+                of any person without the prior written consent of DMI.</p>
+            <p>13.2 DMI shall be entitled to sell, transfer, assign or securitise in any manner whatsoever (in whole or in part and including through grant of participation rights) all or any of its benefits, right, obligation, duties and / or liabilities
+                under Financing Documents, without the prior written consent of, or intimation to the Borrower in such manner and such terms as DMI may decide. In the event of such transfer, assignment or securitization, the Borrower shall perform and
+                be liable to perform their obligation under the Financing Documents to such assignee or transferor. In such event, the Borrower shall substitute the remaining PDCs/ECS in favour of the transferee/ assignee if called upon to do so by DMI.
+            </p>
+            <h3 class="loan_details_h3">14. INDEMNITY</h3>
+            <p>The Borrower hereby indemnifies, defends and holds DMI, its employees, representatives and consultants harmless from time to time and at all times against any liability, claim, loss, judgment, damage, cost or expense (including, without limitation,
+                reasonable attorney’s fees and expenses) as a result of or arising out of any failure by the Borrower to observe or perform any of the terms and conditions and obligations contained in the Financing Documents or Event of Default or the
+                exercise of any of the rights by DMI under the Financing Documents, including for any enforcement of security or recovery of Borrower’s Dues.
+            </p>
+            <h3 class="loan_details_h3">15. Acceptance:</h3>
+            <p><b>I/We am/are aware that DMI shall agree to become a party to this GC only after satisfying itself with
+                    regard to all
+                    conditions and details filled by me / us in the GC and other Financing Documents in consonance with
+                    DMI
+                    policy. I / We agree that this GC shall be concluded and become legally binding on the date when the
+                    authorized
+                    officer of DMI signing this at Delhi or on the date of first disbursement, whichever is earlier.
+                </b></p>
+            <p>By clicking “I accept”, the Borrower electronically signs these GC and agrees to be legally bound by its terms. The Borrower’s acceptance of these GC shall constitute: (i) the Borrower’s agreement to irrevocably accept and to be unconditionally
+                bound by all the terms and conditions set out in these GC; and (ii) the Borrower’s acknowledgement and confirmation that these GC (along with the Financing Documents) have been duly read and fully understood by the Borrower.</p>
+            <h3 class="loan_details_h3">Notes</h3>
+            <p>Charges & Deductions applicable to this Loan Facility are as mentioned in the application form and have been duly explained to me. I/We confirm the receipt of General Terms & Conditions governing this Loan Facility, which have been signed
+                by me/us in acceptance and a copy of which has been provided to me/us and confirm that the Loan Facility granted by DMI on the above terms will also be governed by the aforesaid General Terms and Conditions and my Loan Application.</p>
+        </div>
+        <div class="customer_constent">
+            <h4 class="loan_details_h4">CUSTOMER CONSENT DEVICE INFORMATION</h4>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Signed By</span>
+                <span class="label_right">{{userDetails.First_Name?userDetails.First_Name:'-'}} {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Signed on</span>
+                <span class="label_right">{{userDetails.Date?userDetails.Date:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Mobile</span>
+                <span class="label_right">{{userDetails.Mobile_Number?userDetails.Mobile_Number:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Browser</span>
+                <span class="label_right">{{userDetails.Device_Browser?userDetails.Device_Browser:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Device Type</span>
+                <span class="label_right">{{userDetails.Device_Type?userDetails.Device_Type:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Reason</span>
+                <span class="label_right">{{userDetails.Reason?userDetails.Reason:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Remark</span>
+                <span class="label_right">{{userDetails.Remark?userDetails.Remark:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">IP Address</span>
+                <span class="label_right">{{userDetails.Device_IP_Address?userDetails.Device_IP_Address:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Location</span>
+                <span class="label_right">{{userDetails.Device_Location?userDetails.Device_Location:'-'}}</span>
+            </p>
+            <h3 class="loan_details_h3">FORM 60</h3>
+            <p class="cst-mg-bottom-15">[See third provision to of Rule 114B]</p>
+            <p class="cst-mg-bottom-15">Form of Declaration to be filled by a person who does no have either permanent account number of general index Register Number and who makes payment in respect of transaction specified in clauses (c) to (f) of rule 114B of the income Tax Act.
+                1962.
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Full Name</span>
+                <span class="label_right">{{userDetails.First_Name?userDetails.First_Name:'-'}} {{userDetails.Last_Name?userDetails.Last_Name:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Address</span>
+                <span class="label_right">{{userDetails.Mailing_Address?userDetails.Mailing_Address:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Account Type</span>
+                <span class="label_right">-</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Account Number</span>
+                <span class="label_right">{{userDetails.Bank_Account_Number?userDetails.Bank_Account_Number:'-'}}</span>
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Amount of the transaction Rs.</span>
+                <span class="label_right">{{userDetails.Loan_Amount?(userDetails.Loan_Amount|customCurrency):'-'}}</span>
+            </p>
+            <h5 class="lds_heading-5">Are you assessed to tax?</h5>
+            <ul class="yes_no_check">
+                <li>Yes</li>
+                <li>No</li>
+            </ul>
+            <h5 class="lds_heading-5">If yes :</h5>
+            <p class="cst-mg-bottom-15">(i) Details of Ward / Circle / Range where the last return of income was filed.</p>
+            <p>(ii) Reasons for not having permanent account number / General Index Register Number.</p>
+            <h5 class="lds_heading-5">Details of document being produced in support of address in column (1)</h5>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Verification</span>
+                <span class="label_right">--</span>
+            </p>
+            <p class="cst-mg-bottom-15" style="color: #ef193e;">*Above is true to the best of my knowledge and belief</p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Date :</span>
+                <!-- <span class="label_right">--</span> -->
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left">Place :</span>
+                <!-- <span class="label_right">--</span> -->
+            </p>
+            <p class="label_left_right_wrapper">
+                <span class="label_left" style="text-align: right;float: none;display: block;">Signature of the
+                    declarant</span>
+                <!-- <span class="label_right">--</span> -->
+            </p>
+        </div>
+        <div class="instruction_section">
+            <h3 class="loan_details_h3">INSTRUCTIONS :</h3>
+            <p><b>Documents which can be produced in support of the address are:</b></p>
+            <ul>
+                <li>(a) Bank Statement (last 6 months)</li>
+                <li>(b) Pay Slip (last 3 months) </li>
+                <li>(c) PAN Copy </li>
+                <li>(d) Proof of Address</li>
+                <li>(e) eMandate / NACH Form </li>
+                <li>(f) Cancelled Cheque.</li>
+            </ul>
+        </div>
+        <div class="loader flexBottom alignCenter z200 white70 trbl-0 vh-center blur-2" *ngIf="showLoader" style="background-color: #dad8d86b;">
+            <div class="loadingio-spinner-ripple-vn8rakm316">
+                <div class="ldio-6hoh5fvyavc">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2 loader-height">
+            <app-loader></app-loader>
+        </div>
+    </div>
+    <div class="container continue_bottom_btn">
+        <mat-card>
+            <div class="submit">
+                <mat-checkbox (change)='onChange($event)'>I agree to the Terms and Conditions</mat-checkbox>
+                <div class="continue-btn button_div_common">
+                    <button class="click-btn pointer" [ngClass]="{'disabledBtn':!enableBtn}" [disabled]="!enableBtn" (click)="submit()"><span class="button_div_common_text">Continue</span><span
+                            style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png"
+                                alt=""></span></button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
