@@ -1,0 +1,42 @@
+.container-main {
+    max-width: 600px;
+}
+
+// mat-slider {
+//     width: 300px;
+// }
+.logos-container {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background: #4C10C1;
+    // height: 50px;
+}
+
+.ext-st.active {
+    background: #F5F8FA;
+    border: 2px solid #7040CD;
+}
+
+.ext-st {
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 0.8px solid rgba(17, 33, 54, 0.6);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.step {
+    padding-top: 45px;
+    letter-spacing: 1.5px;
+}
+
+.continue-btn {
+    // position: static;
+    width: 100%;
+    text-align: center;
+    // padding-top: 280px;
+}
+
+.First_text {
+    color: #112136;
+}

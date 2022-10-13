@@ -1,0 +1,78 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 2 of 5</span> </p>
+        </div>
+    </div>
+    <div class="pd-left-25 pd-top-30 pd-right-20">
+        <!-- <p class="fs-27 fw-300 First_text">Select</p> -->
+        <h2 class="fs-27 fw-400 First_text">Gender</h2>
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+        <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+
+    </div>
+    <!-- <form class="mg-bottom-15" action="" [formGroup]="userForm" (ngSubmit)="onFormSubmit()"> -->
+    <form class="mg-bottom-auto" #userForm="ngForm">
+        <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+                <label class="Labelfont z-1">Please select your gender</label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+                <label class=" ext-st pointer" [ngClass]="{ active: step === 'step1' }" (click)="step = 'step1'">Male<input class="no-border no-outline pd-bottom-5 float-r" type="radio"  name="gender" value="Male" [ngModel]="gender" required #gender="ngModel" (change)="Gender1($event)"/></label>
+
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step2' }" (click)="step = 'step2'">Female
+                    <input class="no-border no-outline pd-bottom-5 float-r" type="radio" name="gender"  value="Female" 
+                    [ngModel]="gender" required #gender="ngModel" (change)="Gender1($event)"/></label>
+            </div>
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+
+                <label class="ext-st pointer" [ngClass]="{ active: step === 'step3' }" (click)="step = 'step3'">Others
+                    <input class="no-border no-outline pd-bottom-5 float-r" type="radio" name="gender"  value="Other" [ngModel]="gender" 
+                    required #gender="ngModel" (change)="Gender1($event)"/></label>
+            </div>
+            <div *ngIf="Errorgender">
+                <p class="error">{{error}}</p>
+            </div>
+            <div *ngIf="gender.invalid && userForm.submitted && !isValidFormSubmitted" [ngClass]="'error'">
+                Gender required.
+            </div>
+            <!-- <div *ngIf="userForm.get('gender').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+                Gender required.
+            </div> -->
+
+        </div>
+
+    </form>
+    <div class="button_div_common mg-bottom-25" *ngIf="buttonhide">
+        <button class="click-btn pointer" (click)="onFormSubmit(userForm)" [class.disabled]="isDisabled1" [disabled]="isDisabled1"><span class="button_div_common_text" >Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+    </div>
+    <!-- (click)="continueDOB()" -->
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2 loader-height">
+        <div class="loadingio-spinner-rolling-sray298du2g">
+            <div class="ldio-ti8ltt9443b">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>

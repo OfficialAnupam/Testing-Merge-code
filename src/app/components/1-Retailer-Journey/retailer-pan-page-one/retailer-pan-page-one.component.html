@@ -1,0 +1,236 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()" *ngIf="!Errorexit">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit1()" *ngIf="Errorexit">
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 1 of 5</span> </p>
+        </div>
+    </div>
+    <!-- <div class=" pointer mg-top-25">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                        <path id="Imported Path" fill="#000000" stroke="#000000" stroke-width="1" d="M 14.72,17.57
+                          C 16.29,17.57 16.45,16.64 16.45,15.50
+                            16.45,15.50 16.45,2.07 16.45,2.07
+                            16.45,0.93 16.29,0.00 14.72,0.00
+                            13.16,0.00 13.00,0.93 13.00,2.07
+                            13.00,2.07 13.00,15.50 13.00,15.50
+                            13.00,16.64 13.16,17.57 14.72,17.57 Z
+                          M 19.94,2.35
+                          C 19.94,2.35 19.94,6.15 19.94,6.15
+                            23.40,7.94 25.78,11.55 25.78,15.73
+                            25.78,21.68 20.96,26.50 15.00,26.50
+                            9.05,26.50 4.22,21.68 4.22,15.73
+                            4.22,11.90 6.23,8.54 9.23,6.63
+                            9.23,6.63 9.23,2.68 9.23,2.68
+                            4.22,4.89 0.73,9.90 0.73,15.73
+                            0.73,23.61 7.12,30.00 15.00,30.00
+                            22.89,30.00 29.27,23.61 29.27,15.73
+                            29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+                    </svg>
+            </div> -->
+    <!-- <div class="mlAuto pointer mg-top-30" (click)="exit()" *ngIf="!Errorexit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#000000" stroke="#000000" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div>
+        <div class="mlAuto pointer mg-top-30" (click)="exit1()" *ngIf="Errorexit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                <path id="Imported Path" fill="#000000" stroke="#000000" stroke-width="1" d="M 14.72,17.57
+                  C 16.29,17.57 16.45,16.64 16.45,15.50
+                    16.45,15.50 16.45,2.07 16.45,2.07
+                    16.45,0.93 16.29,0.00 14.72,0.00
+                    13.16,0.00 13.00,0.93 13.00,2.07
+                    13.00,2.07 13.00,15.50 13.00,15.50
+                    13.00,16.64 13.16,17.57 14.72,17.57 Z
+                  M 19.94,2.35
+                  C 19.94,2.35 19.94,6.15 19.94,6.15
+                    23.40,7.94 25.78,11.55 25.78,15.73
+                    25.78,21.68 20.96,26.50 15.00,26.50
+                    9.05,26.50 4.22,21.68 4.22,15.73
+                    4.22,11.90 6.23,8.54 9.23,6.63
+                    9.23,6.63 9.23,2.68 9.23,2.68
+                    4.22,4.89 0.73,9.90 0.73,15.73
+                    0.73,23.61 7.12,30.00 15.00,30.00
+                    22.89,30.00 29.27,23.61 29.27,15.73
+                    29.27,9.58 25.38,4.36 19.94,2.35 Z" />
+            </svg>
+        </div> -->
+
+    <div *ngIf="!requestkeyerror">
+        <div>
+            <div class="pd-left-25 pd-top-20 pd-right-20">
+                <!-- <p class="fs-27 fw-300 First_text">Enter</p> -->
+                <h2 class="pd-top-5 fs-27 fm-s First_text">PAN</h2>
+            </div>
+
+            <div class="mg-bottom-15">
+                <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25" *ngIf="FirstPan">
+                    <div class="flex-bottom relative mg-bottom-10" style="min-width: 0px;">
+                        <label class="Labelfont bg-white-100 z-1">Please enter your PAN</label>
+                        <!-- <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="Enter PAN"> -->
+                        <div>
+                            <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="PAN" [(ngModel)]="PanNumber" maxlength="10" style="text-transform:uppercase" regexp="/^([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([0-9]([0-9]([0-9]([0-9]([a-zA-Z])?)?)?)?)?)?)?)?)?)?$/"
+                                (keypress)="ShowValidatebtn($event)">
+                            <button class="validate_btn" (click)="fetchButton()" [class.disabled]="isDisabled1" [disabled]="isDisabled1" *ngIf="showValidatebutton">Validate</button>
+                        </div>
+                    </div>
+                    <div *ngIf="Error">
+                        <div class="error">{{error}}</div>
+                    </div>
+
+                </div>
+                <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25" *ngIf="secondscreen">
+                    <div class="flex-bottom relative mg-bottom-10" style="min-width: 0px;">
+                        <label class="bg-white-100 z-1 Labelfont">PAN</label>
+                        <div>
+                            <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="PAN" maxlength="10" style="text-transform:uppercase" regexp="/^([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([0-9]([0-9]([0-9]([0-9]([a-zA-Z])?)?)?)?)?)?)?)?)?)?$/" [(ngModel)]="PanNumber"
+                                (keypress)="RemovePan($event)">
+                            <button class="validate_btn" (click)="fetchButton()" *ngIf="showbutton">Validate</button>
+                        </div>
+
+                    </div>
+                    <div *ngIf="Error" class="pd-top-10 mg-bottom-10">
+                        <div class="error">{{error}}</div>
+                    </div>
+                    <div *ngIf="showbutton2">
+                        <label class="fw-500 bg-white-100 z-1" style="letter-spacing: 0.02em;font-size: 10pt !important;"><span><img src="assets/Image/Vector.png" alt="" class="mg-right-10" style="height: 15px;"></span><span style="position: relative;top: -3px;" >{{CustomerName}}</span></label>
+                    </div>
+                    <!-- <div *ngIf="showbutton2">
+                        <label class="fw-500 bg-white-100 z-1" style="letter-spacing: 0.02em;font-size: 10pt !important;"><span><img src="assets/Image/Vector.png" alt="" class="mg-right-10" style="height: 15px;"></span><span style="position: relative;top: -3px;" >{{CustomerName}}</span></label>
+                    </div> -->
+
+
+                </div>
+
+                <div class="instruction flex-bottom mg-top-30 pd-right-25 pd-left-25" *ngIf="secondscreen">
+                    <div class="text-dec">
+                        <div>
+                            <input type="checkbox" class="mg-right-5 mg-top-2" (click)="checked = !checked;">
+                        </div>
+
+                        <p class="terms_condition">I agree to <span style="color: rgba(0, 168, 225, 0.8);"><button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            Terms and Conditions,
+                          </button></span> give consent to fetch my KYC from CERSAI and authorise Service Lee Technologies Private Limited to access my credit report from Credit bureaus and store it to process my loan application.</p>
+                    </div>
+                </div>
+                <!-- <p class="dec-text">Down Payment<span class="float-r">INR{{insertCommas(downpayment)}}</span></p> -->
+                <div class="button_div_common pd-left-25 pd-right-20 mg-top-30" *ngIf="FirstPan">
+                    <button class="click-btn pointer" (click)="fetchButton()" [ngClass]="(checked == true && PanNumber) ? ' font  noBorder noOutline h40 lp25 rp25 br5 mainBackground' : 'font t5s maxWidth400 autoMarginX tWhite100 noBorder noOutline h40 lp25 rp25 br5 disableBackground'"
+                        [disabled]="( (checked == false ))"><span class="button_div_common_text">Next</span><span style="float: right;" class="pd-right-15"><img src="assets/Image/Arrow.png" alt=""></span></button>
+                </div>
+                <div class="button_div_common pd-left-25 pd-right-20 mg-top-30">
+                    <button class="click-btn pointer mainBackground" (click)="fetchButton1()" [ngClass]="(checked == true && PanNumber) ? ' mainBackground' : 'disableBackground'" [disabled]="( (checked == false ))"><span class="button_div_common_text">Next</span><span style="float: right;" class="pd-right-15"><img src="assets/Image/Arrow.png" alt=""></span></button>
+                </div>
+            </div>
+        </div>
+        <!-- -------------------------------------------------------------------------Second-screen------------------ -->
+
+        <!-- <div *ngIf="secondscreen">
+            <div class="pd-left-25 pd-top-25 pd-right-20">
+                <p class="fs-22 fw-100 First_text let-sp ">Enter</p>
+                <h2 class="pd-top-5 fs-27 fm-s First_text">PAN</h2>
+            </div>
+            <div class="mg-bottom-15">
+                <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25">
+                    <div class="flex-bottom relative mg-bottom-10" style="min-width: 0px;">
+                        <label class="fw-500 fs-12  bg-white-100 z-1" style="letter-spacing: 0.02em;">PAN</label>
+
+                        <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="Enter PAN" maxlength="10" style="text-transform:uppercase" regexp="/^([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([0-9]([0-9]([0-9]([0-9]([a-zA-Z])?)?)?)?)?)?)?)?)?)?$/" [(ngModel)]="PanNumber">
+                    </div>
+                    <div *ngIf="Error" class="pd-top-10">
+                        <div class="error">{{error}}</div>
+                    </div>
+                    <div>
+                        <label class="fw-500 bg-white-100 z-1" style="letter-spacing: 0.02em;font-size: 10pt !important;"><span><img src="assets/Image/Vector.png" alt="" class="mg-right-10" style="height: 15px;"></span><span style="position: relative;top: -3px;" >{{CustomerName}}</span></label>
+                    </div>
+
+
+                </div>
+                <div class="instruction flex-bottom mg-top-30 pd-right-25 pd-left-25">
+                    <div class="text-dec">
+                        <div>
+                            <input type="checkbox" class="mg-right-5 mg-top-2" (click)="checked = !checked;">
+                        </div>
+
+                        <p>I agree to <span style="color: rgba(0, 168, 225, 0.8);"><button type="button" class="btn btn-primary custom-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            Terms and Conditions,
+                          </button></span> give consent to fetch my KYC from CERSAI and authorise Service Lee Technologies Private Limited to access my credit report from Credit bureaus and store it to process my loan application On the web it shows as
+                            service Lee, but if Service Lee is correct, Please leave as is and make the other Changes.</p>
+                    </div>
+                </div>
+                <div class="fetch-btn">
+                    <button class="click-btn pointer" (click)="fetchButton1()" [ngClass]="(checked == true && PanNumber) ? ' font  noBorder noOutline h40 lp25 rp25 br5 mainBackground' : 'font t5s maxWidth400 autoMarginX tWhite100 noBorder noOutline h40 lp25 rp25 br5 disableBackground'"
+                        [disabled]="( (checked == false ))"><span class="fetch-text">Next</span><span style="float: right;" class="pd-right-15"><img src="assets/Image/Arrow.png" alt=""></span></button>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <div *ngIf="requestkeyerror">
+        <div class="no-key-found-message-container flex-1 flex-bottom v-center pd-50 pd-left-10 pd-right-10">
+
+            <img class="mg-bottom-50" src="assets/sorry.png" />
+
+            <div class="fs-16 fw-700 txt-center">No or invalid
+                <span class="error">key</span> found
+            </div>
+
+            <!-- <div class="fs-16 fw-700 txt-center mg-top-20">
+                Something went <span class="error">wrong</span>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------- -->
+
+    <!-- -----------------------------------Loader------------------------------------ -->
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2">
+        <div class="loadingio-spinner-rolling-sray298du2g">
+            <div class="ldio-ti8ltt9443b">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal term_and_conditions-->
+
+<div class="term_and_conditions">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLongTitle">Terms and Conditions</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <p>DMI Finance Private Limited maintains this site (www.dmifinance.in) <b>(“Site”)</b> for your information and communication. By availing any service / credit facility being provided by DMI Finance Private Limited directly or indirectly
+                        including by ut ilising the Site (“Services”) you have agreed to each and all of the terms and conditions of this Privacy Policy as set forth below and waive any right to claim ambiguity or error in the same. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

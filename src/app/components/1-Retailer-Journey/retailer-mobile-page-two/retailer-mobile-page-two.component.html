@@ -1,0 +1,57 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 1 of 5</span> </p>
+        </div>
+    </div>
+    <div class="pd-left-25 pd-top-30 pd-right-20">
+        <!-- <p class="fs-27 fw-300 First_text">Enter</p> -->
+        <p class="fs-27 fw-400 First_text">Mobile</p>
+        <h2 class="pd-top-25 fs-27 First_text" style="font-weight: 300 !important;">Number</h2>
+    </div>
+    <form class="mg-bottom-auto" [formGroup]="MobileForm">
+        <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-10" style="min-width: 0px;">
+                <label class="bg-white-100 z-1 Labelfont ">Please enter your mobile number</label>
+                <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="Mobile" [(ngModel)]="MobileNumber" formControlName="Mobilenumber" maxlength="10" appAutofocus numbersOnly (keypress)="numberOnly($event)" required>
+            </div>
+            <div *ngIf="(submitted || f['Mobilenumber'].touched ) && f['Mobilenumber'].invalid">
+                <div *ngIf="f['Mobilenumber'].errors && f['Mobilenumber'].errors['required']" class="error pd-bottom-15">
+                    Mobile number is mandatory
+
+                </div>
+            </div>
+
+            <div *ngIf="errorMobile">
+                <!-- <p class="error">{{Error}}</p> -->
+            </div>
+            <!-- <div class="flex-bottom relative mg-top-10" style="min-width: 0px;">
+                <label class="fw-500 fs-10  bg-white-100 z-1" style="letter-spacing: 0.02em;">Alternative Number (Optional)</label>
+                <input class="no-border no-outline pd-bottom-5 mt10 ext-c" placeholder="9818314619" [(ngModel)]="AlternativeNumber" formControlName="AlternativeNumber" maxlength="10" appAutofocus numbersOnly (keypress)="numberOnly($event)">
+            </div> -->
+        </div>
+
+
+
+    </form>
+
+    <div>howb nndj dn cn cn cn c,kncm. cmcj</div>
+
+    <div class="button_div_common mg-bottom-25 pd-left-25 pd-right-20">
+        <button class="click-btn pointer" (click)="continueEligible()" [disabled]="MobileForm.invalid" [ngClass]="MobileForm.valid ? 'mainBackground ' : 'disableBackground'"><span class="button_div_common_text">Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+    </div>
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2 loader-height">
+        <div class="loadingio-spinner-rolling-sray298du2g">
+            <div class="ldio-ti8ltt9443b">
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+</div>

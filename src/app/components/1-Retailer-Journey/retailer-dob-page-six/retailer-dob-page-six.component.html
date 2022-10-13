@@ -1,0 +1,47 @@
+<div class="container-main bd-black-10 flex-bottom auto-margin-x height-100vh empty-scrollbar-y relative">
+
+    <div class="logos-container1">
+        <div class="header-div pd-left-8 pd-right-20">
+            <img src="assets/Dmi-logo.svg" alt="" style="max-width:100px">
+            <img src="assets/Power_button.svg" alt="" style="max-width:100px" class="pointer" (click)="exit()">
+
+        </div>
+        <div class="step1 step1-color">
+            <p class="color-2 step1paragraph"><span><img src="assets/Image/Arrow-left.png" alt="" class="mg-top-4 height-12"></span> <span class="mg-left-15">Step 1 of 5</span> </p>
+        </div>
+    </div>
+    <div>anupam</div>
+    <p>saurbh ndddjkndkjndkl</p>
+    <div class="pd-left-25 pd-top-30 pd-right-20">
+        <!-- <p class="fs-27 fw-300 First_text">Add</p> -->
+        <h2 class="pd-top-5 fs-27 fw-400 First_text">Date of Birth</h2>
+    </div>
+    <div class="mg-bottom-auto">
+        <div class="flex-bottom mg-top-30 pd-right-25 pd-left-25">
+            <div class="flex-bottom relative mg-bottom-15" style="min-width: 0px;">
+                <label class="Labelfont  z-1">Please enter your date of birth</label>
+                <input class="no-border no-outline pd-bottom-5 mt10 ext-c pointer" [matDatepicker]="datePicker" (click)="datePicker.open()" [max]="twentyYears" readonly placeholder="03/06/1986" [(ngModel)]="DOB" required (click)="DateOfBirth($event)" />
+                <div class="h-0 o-Hide">
+                    <mat-datepicker #datePicker></mat-datepicker>
+                </div>
+            </div>
+            <div *ngIf="Errordob">
+                <p class="error">{{error}}</p>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="button_div_common mg-bottom-25" *ngIf="buttonhide">
+        <button class="click-btn pointer" (click)="continuePIN()" [disabled]="!DOB" [class.disabled]="isDisabled1" [disabled]="isDisabled1"><span class="button_div_common_text">Continue</span><span style="float: right;" class="pd-right-10"><img src="assets/Image/Arrow.png" alt=""></span></button>
+    </div>
+
+    <div *ngIf="Loader1" class="z-1000 absolute trbl-0 vh-center bg-white-50 blur-2 loader-height">
+        <div class="loadingio-spinner-rolling-sray298du2g">
+            <div class="ldio-ti8ltt9443b">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
